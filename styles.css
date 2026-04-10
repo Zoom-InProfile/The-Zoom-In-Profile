@@ -576,3 +576,18 @@ body {
     max-width: 100%;
   }
 }
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .top-bar img {
+    margin-bottom: 4px;
+  }
+
+  .top-bar h1 {
+    text-align: center;
+  }
+}
