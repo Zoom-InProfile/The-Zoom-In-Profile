@@ -1,5 +1,5 @@
 /* ============================================================
-   THE ZOOM-IN PROFILE — styles.css
+   THE ZOOM-IN PROFILE â€” styles.css
    Brand palette: #000000, #ffffff, #fcd21d
    Fonts: Playfair Display (headings), DM Sans (body)
 ============================================================ */
@@ -153,9 +153,10 @@ body {
 
 /* Emphasized lead-in line before bullet list */
 .intro-lead {
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--black);
-  margin-top: 28px;
+  margin-top: 36px;
   margin-bottom: 16px !important;
 }
 
@@ -191,7 +192,7 @@ body {
   border-radius: 50%;
 }
 
-/* Closing statement — spaced apart from bullet list */
+/* Closing statement â€” spaced apart from bullet list */
 .intro-closing {
   margin-top: 28px !important;
   padding-top: 20px;
