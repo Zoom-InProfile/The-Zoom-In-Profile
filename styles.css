@@ -1,6 +1,5 @@
-
 /* ============================================================
-   THE ZOOM-IN PROFILE — styles.css
+   THE ZOOM-IN PROFILE â€” styles.css
    Brand palette: #000000, #ffffff, #fcd21d
    Fonts: Playfair Display (headings), DM Sans (body)
 ============================================================ */
@@ -69,7 +68,7 @@ body {
   text-align: center;
   pointer-events: none;
   font-family: var(--font-body);
-  font-size: clamp(0.7rem, 1.8vw, 0.82rem);
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
