@@ -310,9 +310,9 @@ body {
 
 .scale-label-left,
 .scale-label-right {
-  font-size: 0.8rem;
-  color: var(--gray-400);
-  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  font-weight: 500;
   max-width: 48%;
 }
 
