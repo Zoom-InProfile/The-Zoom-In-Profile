@@ -1,3 +1,4 @@
+
 /* ============================================================
    THE ZOOM-IN PROFILE — styles.css
    Brand palette: #000000, #ffffff, #fcd21d
@@ -49,27 +50,31 @@ body {
 .site-header {
   background-color: var(--black);
   padding: 0 24px;
+  position: relative;
 }
 
 .header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 24px 0;
+  padding: 18px 0;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 24px;
+  position: relative;
 }
 
 .header-tagline {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 3.5vw, 1.75rem);
-  font-weight: 600;
-  font-style: italic;
-  color: var(--white);
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 1.8vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
   margin: 0;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
 }
 
 .site-logo {
@@ -100,9 +105,11 @@ body {
 /* --- Hero ------------------------------------------------- */
 .hero {
   text-align: center;
-  padding: 60px 0 36px;
+  padding: 44px 0 36px;
   border-bottom: 1px solid var(--gray-200);
 }
+
+
 
 .hero-title {
   font-family: var(--font-display);
@@ -149,11 +156,12 @@ body {
 /* --- Hero Byline ------------------------------------------ */
 .hero-byline {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 300;
   color: var(--gray-400);
-  letter-spacing: 0.04em;
-  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+  margin-top: 6px;
+  margin-bottom: 24px;
   font-style: italic;
 }
 
@@ -481,19 +489,6 @@ body {
 /* ============================================================
    RESPONSIVE
 ============================================================ */
-@media (max-width: 540px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 20px 0;
-  }
-
-  .header-tagline {
-    font-size: 1.15rem;
-  }
-}
-
 @media (min-width: 600px) {
   .steps-grid {
     grid-template-columns: 1fr;
