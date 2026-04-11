@@ -495,11 +495,12 @@ body {
 }
 
 /* --- Answer Grid ------------------------------------------ */
-.answer-grid {
+.answer-grid,
+#answer-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  margin-top: 32px;
+  margin-top: 36px;
 }
 
 .answer-btn {
