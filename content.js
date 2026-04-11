@@ -27,7 +27,7 @@ const questions = [
     id: "somatic_1",
     category: "somatic",
     type: "scenario",
-    question: "You are managing ongoing physical discomfort that isn't going away anytime soon. On a day when the discomfort is noticeable and the demands on you don't let up, you notice:",
+    question: "You’re dealing with ongoing physical discomfort that isn’t going away. On a demanding day, you notice:",
     answers: [
       { text: "You acknowledge the discomfort, adjust your expectations, and move through the day without it taking over", score: 0 },
       { text: "You feel the strain and are less patient or present, but you stay engaged", score: 1 },
