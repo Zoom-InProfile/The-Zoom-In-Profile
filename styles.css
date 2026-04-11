@@ -522,8 +522,8 @@ body {
 }
 
 .answer-btn.selected {
-  background: var(--accent-soft);
-  border-color: var(--accent);
+  background: #f4efe3;
+  border: 2px solid #e6c65b;
   color: var(--black);
   font-weight: 500;
 }
