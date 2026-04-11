@@ -59,7 +59,6 @@ function buildDepletionScale() {
     depletionScale.appendChild(btn);
   }
 }
-
 /* ============================================================
    QUIZ INITIALIZATION
    Resets state and pre-fills the responses array based on
@@ -98,41 +97,57 @@ function renderQuestion() {
     currentQuestion = questions[index];
   } else {
     currentQuestion = {
-      category: 'Placeholder Category',
-      text: 'This is a placeholder question. Real questions will be loaded from content.js in a later step.',
-      options: [
-        { value: 0, label: 'This almost never happens for me.' },
-        { value: 1, label: 'This occasionally happens for me.' },
-        { value: 2, label: 'This fairly often happens for me.' },
-        { value: 3, label: 'This almost always happens for me.' }
+      category: 'placeholder',
+      type: 'scenario',
+      question: 'This is a placeholder question. Real questions will be loaded from content.js in a later step.',
+      answers: [
+        { text: 'This almost never happens for me.', score: 0 },
+        { text: 'This occasionally happens for me.', score: 1 },
+        { text: 'This fairly often happens for me.', score: 2 },
+        { text: 'This almost always happens for me.', score: 3 }
       ]
     };
   }
 
-  // --- Update text ---
-  questionCategory.textContent = currentQuestion.category || '';
-  questionText.textContent     = currentQuestion.text;
+  // --- Category label: capitalize and format for display ---
+  const categoryLabels = {
+    somatic: 'Somatically Sensitive',
+    self: 'Self-Relationship',
+    approval: 'Approval',
+    connection: 'Connection',
+    attachment: 'Attachment',
+    capacity: 'Capacity',
+    change: 'Change',
+    humanity: 'Humanity',
+    uncertainty: 'Uncertainty',
+    placeholder: 'Category'
+  };
+  const categoryDisplay = categoryLabels[currentQuestion.category] || currentQuestion.category;
+  questionCategory.textContent = categoryDisplay;
+
+  // --- Question text: use "question" field ---
+  questionText.textContent = currentQuestion.question || '';
 
   // --- Update progress bar ---
   const percent = ((index + 1) / total) * 100;
   progressFill.style.width = percent + '%';
   progressLabel.textContent = 'Question ' + (index + 1) + ' of ' + total;
 
-  // --- Rebuild answer buttons ---
+  // --- Rebuild answer buttons using "answers" array ---
   answerGrid.innerHTML = '';
-  currentQuestion.options.forEach(function (option) {
+  currentQuestion.answers.forEach(function (option) {
     const btn = document.createElement('button');
-    btn.textContent = option.label;
+    btn.textContent = option.text;
     btn.classList.add('answer-btn');
-    btn.setAttribute('data-value', option.value);
+    btn.setAttribute('data-value', option.score);
 
     // Highlight if this answer was previously selected
-    if (state.responses[index] === option.value) {
+    if (state.responses[index] === option.score) {
       btn.classList.add('selected');
     }
 
     btn.addEventListener('click', function () {
-      selectAnswer(option.value);
+      selectAnswer(option.score);
     });
 
     answerGrid.appendChild(btn);
