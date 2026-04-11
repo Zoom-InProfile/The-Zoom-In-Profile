@@ -591,3 +591,6 @@ body {
     text-align: center;
   }
 }
+#question-category {
+  display: none;
+}
