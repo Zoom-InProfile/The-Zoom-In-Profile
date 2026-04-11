@@ -8,9 +8,10 @@
    All quiz state lives here. Add to this object in later steps.
 ------------------------------------------------------------ */
 const state = {
-  currentIndex: 0,         // Which question we're on
-  responses: [],           // Array of selected answer values per question
-  depletionScore: null     // 1–10 from depletion scale; not yet used in scoring
+  currentIndex: 0,
+  responses: [],
+  depletionScore: null,
+  orderedQuestions: []
 };
 
 /* --- DOM References --------------------------------------- */
@@ -58,6 +59,32 @@ function buildDepletionScale() {
 
     depletionScale.appendChild(btn);
   }
+} function shuffleQuestionsWithRules(questionsArray) {
+  const pool = [...questionsArray];
+  const ordered = [];
+
+  while (pool.length > 0) {
+    const candidates = pool.filter((q) => {
+      const last = ordered[ordered.length - 1];
+
+      if (!last) return true;
+
+      const sameCategory = q.category === last.category;
+      const twoScenarios = q.type === 'scenario' && last.type === 'scenario';
+
+      return !sameCategory && !twoScenarios;
+    });
+
+    const source = candidates.length > 0 ? candidates : pool;
+    const nextQuestion = source[Math.floor(Math.random() * source.length)];
+
+    ordered.push(nextQuestion);
+
+    const indexToRemove = pool.findIndex((q) => q.id === nextQuestion.id);
+    pool.splice(indexToRemove, 1);
+  }
+
+  return ordered;
 }
 /* ============================================================
    QUIZ INITIALIZATION
@@ -68,80 +95,61 @@ function buildDepletionScale() {
 function initQuiz() {
   state.currentIndex = 0;
 
-  // Use questions from content.js if available, otherwise fall back to placeholder
-  const questionCount = (typeof questions !== 'undefined' && questions.length > 0)
-    ? questions.length
-    : 1;
+  if (typeof questions !== 'undefined' && questions.length > 0) {
+    state.orderedQuestions = shuffleQuestionsWithRules(questions);
+  } else {
+    state.orderedQuestions = [
+      {
+        category: 'placeholder',
+        type: 'scenario',
+        question: 'This is a placeholder question.',
+        answers: [
+          { text: 'This almost never happens for me.', score: 0 },
+          { text: 'This occasionally happens for me.', score: 1 },
+          { text: 'This fairly often happens for me.', score: 2 },
+          { text: 'This almost always happens for me.', score: 3 }
+        ]
+      }
+    ];
+  }
 
-  // Fill responses array with null (no answer chosen yet)
-  state.responses = new Array(questionCount).fill(null);
+  state.responses = new Array(state.orderedQuestions.length).fill(null);
 
-  renderQuestion();
+  renderQuestion();   
 }
-
 /* ============================================================
    RENDER QUESTION
-   Displays the current question and answer options.
-   Highlights any previously selected answer.
 ============================================================ */
 function renderQuestion() {
   const index = state.currentIndex;
   const total = state.responses.length;
 
-  // --- Determine question data ---
-  // If real questions exist in content.js, use them.
-  // Otherwise show a placeholder so the UI is demonstrable.
-  let currentQuestion;
+  let currentQuestion = state.orderedQuestions[index];
 
-  if (typeof questions !== 'undefined' && questions.length > 0) {
-    currentQuestion = questions[index];
-  } else {
-    currentQuestion = {
-      category: 'placeholder',
-      type: 'scenario',
-      question: 'This is a placeholder question. Real questions will be loaded from content.js in a later step.',
-      answers: [
-        { text: 'This almost never happens for me.', score: 0 },
-        { text: 'This occasionally happens for me.', score: 1 },
-        { text: 'This fairly often happens for me.', score: 2 },
-        { text: 'This almost always happens for me.', score: 3 }
-      ]
-    };
-  }
-
-  // --- Category label: capitalize and format for display ---
   const categoryLabels = {
     somatic: 'Somatically Sensitive',
     self: 'Self-Relationship',
     approval: 'Approval',
-    connection: 'Connection',
-    attachment: 'Attachment',
-    capacity: 'Capacity',
-    change: 'Change',
-    humanity: 'Humanity',
-    uncertainty: 'Uncertainty',
     placeholder: 'Category'
   };
+
   const categoryDisplay = categoryLabels[currentQuestion.category] || currentQuestion.category;
   questionCategory.textContent = categoryDisplay;
 
-  // --- Question text: use "question" field ---
   questionText.textContent = currentQuestion.question || '';
 
-  // --- Update progress bar ---
   const percent = ((index + 1) / total) * 100;
   progressFill.style.width = percent + '%';
   progressLabel.textContent = 'Question ' + (index + 1) + ' of ' + total;
 
-  // --- Rebuild answer buttons using "answers" array ---
   answerGrid.innerHTML = '';
+
   currentQuestion.answers.forEach(function (option) {
     const btn = document.createElement('button');
     btn.textContent = option.text;
     btn.classList.add('answer-btn');
     btn.setAttribute('data-value', option.score);
 
-    // Highlight if this answer was previously selected
     if (state.responses[index] === option.score) {
       btn.classList.add('selected');
     }
@@ -153,22 +161,18 @@ function renderQuestion() {
     answerGrid.appendChild(btn);
   });
 
-  // --- Update navigation buttons ---
   backBtn.disabled = (index === 0);
   updateNextBtn();
 }
 
 /* ============================================================
    SELECT ANSWER
-   Records the chosen value and highlights the button.
 ============================================================ */
 function selectAnswer(value) {
   const index = state.currentIndex;
 
-  // Save response
   state.responses[index] = value;
 
-  // Update button visual states
   document.querySelectorAll('.answer-btn').forEach(function (btn) {
     btn.classList.remove('selected');
     if (parseInt(btn.getAttribute('data-value')) === value) {
@@ -176,12 +180,11 @@ function selectAnswer(value) {
     }
   });
 
-  // Allow moving forward once an answer is chosen
   updateNextBtn();
 }
 
 /* ============================================================
-   NEXT / BACK NAVIGATION
+   NAVIGATION
 ============================================================ */
 function updateNextBtn() {
   const index = state.currentIndex;
@@ -189,7 +192,6 @@ function updateNextBtn() {
 
   nextBtn.disabled = !hasAnswer;
 
-  // On the final question, update the button label
   const isLast = (index === state.responses.length - 1);
   nextBtn.textContent = isLast ? 'See My Results' : 'Next';
 }
@@ -199,10 +201,7 @@ nextBtn.addEventListener('click', function () {
   const isLast = (index === state.responses.length - 1);
 
   if (isLast) {
-    // Scoring and results will be added in a later step
-    console.log('Quiz complete. Responses:', state.responses);
-    console.log('Depletion score:', state.depletionScore);
-    // TODO: Show results page in Step 3
+    console.log('Quiz complete', state.responses);
   } else {
     state.currentIndex++;
     renderQuestion();
@@ -218,7 +217,6 @@ backBtn.addEventListener('click', function () {
 
 /* ============================================================
    START BUTTON
-   Hides the landing page and shows the quiz shell.
 ============================================================ */
 startBtn.addEventListener('click', function () {
   landingPage.classList.add('hidden');
@@ -228,8 +226,11 @@ startBtn.addEventListener('click', function () {
 
 /* ============================================================
    ON LOAD
-   Build the depletion scale when the page is ready.
 ============================================================ */
 document.addEventListener('DOMContentLoaded', function () {
   buildDepletionScale();
 });
+
+
+
+
