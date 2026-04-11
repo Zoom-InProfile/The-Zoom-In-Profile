@@ -499,6 +499,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
+  margin-top: 32px;
 }
 
 .answer-btn {
