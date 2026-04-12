@@ -43,7 +43,7 @@ const questions = [
     id: "somatic_4",
     category: "somatic",
     type: "resilience",
-    question: "Even when I feel physical discomfort, I can still access my usual perspective.",
+    question: "Even when I feel physical discomfort, I keep my usual perspective.",
     answers: [
       { text: "Almost always", score: 0 },
       { text: "Often", score: 1 },
@@ -276,10 +276,10 @@ const questions = [
   type: "scenario",
   question: "You are supporting someone you love over an extended period, and their needs don’t let up. You notice:",
   answers: [
-    { text: "You’re there for them, but your life doesn’t revolve around it", score: 0 },
+    { text: "You’re there for them, but your life stays intact", score: 0 },
     { text: "You feel the weight of it all, but are able to take care of yourself as well", score: 1 },
     { text: "You feel responsible for holding everything together and start to lose your footing", score: 2 },
-    { text: "It feels like it’s all on you, and you can’t step back", score: 3 }
+    { text: "It feels like they are all your responsibility, and you can’t step back", score: 3 }
   ]
 },
 {
@@ -350,7 +350,7 @@ const questions = [
   id: "capacity_3",
   category: "capacity",
   type: "vulnerability",
-  question: "My plate fills up quickly, even when I try to manage it.",
+  question: "Even when my schedule is light, I feel like I have little left to give.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -401,11 +401,11 @@ const questions = [
     id: "change_2",
     category: "change",
     type: "scenario",
-    question: "You made a change you wanted and there have been many challenges. You notice:",
+    question: "You made a change that you wanted, and it's been harder than you anticipated. You notice:",
     answers: [
-      { text: "You expected some disruption and find your footing without losing confidence in your decision", score: 0 },
+      { text: "You adjust to the disruption and find your footing without losing confidence in your decision", score: 0 },
       { text: "You feel unsettled by the challenges, but you trust your decision and stay open", score: 1 },
-      { text: "The disruption is harder than you anticipated and you question whether you made the right choice", score: 2 },
+      { text: "The challenges pile up and you start to question whether you made the right choice", score: 2 },
       { text: "You feel like you made a mistake and can't stop measuring everything against how it was before", score: 3 }
     ]
   },
@@ -437,7 +437,7 @@ const questions = [
     id: "change_5",
     category: "change",
     type: "resilience",
-    question: "I'm comfortable trying new things even when I'm not good at them yet.",
+    question: "I enjoy trying new things even when I'm not good at them yet.",
     answers: [
       { text: "Almost always", score: 0 },
       { text: "Often", score: 1 },
