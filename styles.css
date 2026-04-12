@@ -1384,3 +1384,109 @@ body {
     font-size: 1.2rem;
   }
 }
+
+/* ============================================================
+   CONVERSION UPDATES — Step 3b
+============================================================ */
+
+/* Depletion context note on landing page */
+.depletion-context-note {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+  font-style: italic;
+  margin-bottom: 20px;
+  margin-top: -16px;
+}
+
+/* Mirror paragraph */
+.results-mirror {
+  background: var(--gray-100);
+  border-left: 4px solid var(--black);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: 36px;
+  font-size: 1rem;
+  color: var(--gray-800);
+  line-height: 1.75;
+  font-style: italic;
+}
+
+/* Primary badge on bar graph */
+.bar-label-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.bar-primary-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a4f60;
+  background: #fdf5f7;
+  border: 1px solid #b8768a;
+  border-radius: 99px;
+  padding: 1px 7px;
+  white-space: nowrap;
+}
+
+/* Testimonials inside CTA card */
+.cta-testimonials {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  padding: 20px 0;
+  margin: 4px 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cta-quote {
+  margin: 0;
+  padding: 0;
+}
+
+.cta-quote p {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Pricing note */
+.cta-price-note {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+  align-self: flex-end;
+  padding-bottom: 4px;
+}
+
+.cta-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+/* Work With Me line */
+.cta-work-with-me {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+.cta-work-with-me a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cta-work-with-me a:hover {
+  color: var(--accent);
+}
