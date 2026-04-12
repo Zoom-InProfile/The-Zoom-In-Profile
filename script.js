@@ -195,56 +195,56 @@ const categoryMeta = {
   somatic: {
     label: 'Somatic',
     fullLabel: 'Somatically Sensitive',
-    zoomInTrap: 'Pain becomes the lens through which everything is filtered, and little else gets through.',
-    resilienceNote: 'Your body is already a source of steadiness for you, and that is worth noticing.'
+    resilienceLabel: 'Somatically Resilient',
+    mirror: 'Your highest score is in the Somatic area. When this is your primary pattern, physical sensation becomes the loudest signal in the room — and that same attunement is what makes you unusually aware of what your body needs before others even notice something is off. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
   },
   self: {
     label: 'Self',
     fullLabel: 'Self-Judgment Sensitive',
-    zoomInTrap: 'One mistake becomes proof of a deeper flaw, and the inner critic runs the story.',
-    resilienceNote: 'Your sense of your own worth is stable and hard to shake, even when things go wrong.'
+    resilienceLabel: 'Self-Resilient',
+    mirror: 'Your highest score is in Self-Judgment. When this is your primary pattern, a single mistake can feel like evidence of something larger — and that same inner voice is what drives the high standards and self-awareness that make you good at what you do. This may be a long-standing pattern, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
   },
   approval: {
     label: 'Approval',
     fullLabel: 'Approval-Sensitive',
-    zoomInTrap: "Others' opinions become the measure of your value, and the ground shifts when someone disapproves.",
-    resilienceNote: "Your self-perception doesn't depend heavily on how others see you, and that is a genuine steadying resource."
+    resilienceLabel: 'Approval-Resilient',
+    mirror: "Your highest score is in Approval. When this is your primary pattern, how others see you carries more weight than you'd like — and that same attunement is what makes you perceptive, socially intelligent, and skilled at reading a room. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage."
   },
   connection: {
     label: 'Connection',
     fullLabel: 'Connection-Sensitive',
-    zoomInTrap: 'Distance from someone you love starts to feel like being unloved, even when the evidence says otherwise.',
-    resilienceNote: 'Closeness comes naturally to you, and connection is reliably available as a source of steadiness.'
+    resilienceLabel: 'Connection-Resilient',
+    mirror: 'Your highest score is in Connection. When this is your primary pattern, subtle distance in a relationship can feel like disconnection even when the evidence does not support it — and that same sensitivity is what makes you one of the most attuned and relationally present people in any room. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
   },
   attachment: {
     label: 'Attachment',
     fullLabel: 'Attachment-Sensitive',
-    zoomInTrap: "A loved one's pain becomes indistinguishable from your own, and the weight of caring starts to cost you your footing.",
-    resilienceNote: 'You can be fully present with someone you love without losing yourself in what they are carrying.'
+    resilienceLabel: 'Attachment-Resilient',
+    mirror: 'Your highest score is in Attachment. When this is your primary pattern, the people you love feel like they are partly inside you — their pain lands as your own, and that same depth of care is what makes you an extraordinary source of support for the people in your life. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
   },
   capacity: {
     label: 'Capacity',
     fullLabel: 'Capacity-Sensitive',
-    zoomInTrap: 'Everything feels urgent and nothing feels finishable, and the weight of feeling like you are failing everyone starts to close in.',
-    resilienceNote: 'You can triage and prioritize under pressure without losing sight of what matters most.'
+    resilienceLabel: 'Capacity-Resilient',
+    mirror: 'Your highest score is in Capacity. When this is your primary pattern, demand starts to feel like threat — and that same sensitivity is what keeps you honest about your limits and protective of what actually matters to you. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
   },
   change: {
     label: 'Change',
     fullLabel: 'Change-Sensitive',
-    zoomInTrap: 'You feel unmoored — no longer connected to who you were and not yet connected to who you are becoming.',
-    resilienceNote: 'You can hold transition with curiosity rather than dread, staying connected to yourself even when the ground feels different.'
+    resilienceLabel: 'Change-Resilient',
+    mirror: 'Your highest score is in Change. When this is your primary pattern, transition — even wanted transition — can feel disorienting before it feels freeing — and that same sensitivity is what keeps you deeply connected to meaning, continuity, and the things that matter most to you. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
   },
   humanity: {
     label: 'Humanity',
     fullLabel: 'Globally Sensitive',
-    zoomInTrap: "The world's suffering lands as your own, and the grief or rage is hard to set down.",
-    resilienceNote: 'You can hold the weight of what is happening in the world without being flooded by it.'
+    resilienceLabel: 'Humanity-Resilient',
+    mirror: 'Your highest score is in the Humanity area. When this is your primary pattern, the weight of what is happening in the world lands personally — and that same permeability is what makes you someone who genuinely feels the stakes and shows up with real care for people and for what is right. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
   },
   uncertainty: {
     label: 'Uncertainty',
     fullLabel: 'Uncertainty-Sensitive',
-    zoomInTrap: 'When the future is unclear, your nervous system fills the gap with the worst possible version of it.',
-    resilienceNote: 'You can sit with not-knowing without catastrophizing, and that tolerance is a genuine resource.'
+    resilienceLabel: 'Uncertainty-Resilient',
+    mirror: 'Your highest score is in Uncertainty. When this is your primary pattern, not-knowing feels genuinely uncomfortable and your mind moves quickly to fill that gap — and that same sensitivity is what makes you a careful thinker who anticipates what others miss. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
   }
 };
 
@@ -349,7 +349,8 @@ function showResults() {
   resilience.forEach(function (r) {
     const tag = document.createElement('span');
     tag.classList.add('resilience-tag');
-    tag.textContent = r.fullLabel;
+    const meta = categoryMeta[r.category];
+    tag.textContent = meta && meta.resilienceLabel ? meta.resilienceLabel : r.fullLabel;
     resContainer.appendChild(tag);
   });
   resContent.appendChild(resContainer);
