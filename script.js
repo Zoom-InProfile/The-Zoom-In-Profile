@@ -186,33 +186,6 @@ function updateNextBtn() {
   nextBtn.textContent = isLast ? 'See My Results' : 'Next';
 }
 
-nextBtn.addEventListener('click', function () {
-  const index = state.currentIndex;
-  const isLast = (index === state.responses.length - 1);
-  if (isLast) {
-    showResults();
-  } else {
-    state.currentIndex++;
-    renderQuestion();
-  }
-});
-
-backBtn.addEventListener('click', function () {
-  if (state.currentIndex > 0) {
-    state.currentIndex--;
-    renderQuestion();
-  }
-});
-
-/* ============================================================
-   START BUTTON
-============================================================ */
-startBtn.addEventListener('click', function () {
-  landingPage.classList.add('hidden');
-  quizPage.classList.remove('hidden');
-  initQuiz();
-});
-
 /* ============================================================
    SCORING ENGINE — Step 3
 ============================================================ */
@@ -292,11 +265,11 @@ function showResults() {
   /* --- Results title --- */
   if (primaries.length === 1) {
     document.getElementById('results-title').textContent =
-      'Your Primary Stress Type: ' + primaries[0].fullLabel;
+      'Your primary stress type: ' + primaries[0].fullLabel;
   } else {
     const names = primaries.map(function (p) { return p.fullLabel; }).join(' and ');
     document.getElementById('results-title').textContent =
-      'Your Primary Stress Types: ' + names;
+      'Your primary stress types: ' + names;
   }
 
   /* --- Depletion context note --- */
@@ -378,6 +351,33 @@ function showResults() {
 ============================================================ */
 document.addEventListener('DOMContentLoaded', function () {
   buildDepletionScale();
+
+  /* Next button */
+  nextBtn.addEventListener('click', function () {
+    const index = state.currentIndex;
+    const isLast = (index === state.responses.length - 1);
+    if (isLast) {
+      showResults();
+    } else {
+      state.currentIndex++;
+      renderQuestion();
+    }
+  });
+
+  /* Back button */
+  backBtn.addEventListener('click', function () {
+    if (state.currentIndex > 0) {
+      state.currentIndex--;
+      renderQuestion();
+    }
+  });
+
+  /* Start button */
+  startBtn.addEventListener('click', function () {
+    landingPage.classList.add('hidden');
+    quizPage.classList.remove('hidden');
+    initQuiz();
+  });
 
   /* Retake button */
   const retakeBtn = document.getElementById('retake-btn');
