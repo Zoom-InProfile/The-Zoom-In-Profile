@@ -1564,3 +1564,27 @@ body {
   font-weight: 500;
   letter-spacing: 0.02em;
 }
+
+/* Work With Me — Option B treatment */
+.cta-work-with-me {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 24px;
+  padding-top: 20px;
+}
+
+.cta-work-with-me p {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cta-work-with-me a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cta-work-with-me a:hover {
+  opacity: 0.85;
+}
