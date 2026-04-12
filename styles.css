@@ -1588,3 +1588,13 @@ body {
 .cta-work-with-me a:hover {
   opacity: 0.85;
 }
+
+/* Capitalized results block headings */
+.results-block-heading--caps {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  font-family: var(--font-body);
+  color: var(--gray-600);
+}
