@@ -1,12 +1,10 @@
 /* ============================================================
    THE ZOOM-IN PROFILE — script.js
-   Step 1: Navigation, depletion scale, quiz shell.
-   No scoring logic yet. Content loaded from content.js.
+   Steps 1–3: Navigation, depletion scale, quiz, scoring, results.
+   Content loaded from content.js.
 ============================================================ */
 
-/* --- State ------------------------------------------------
-   All quiz state lives here. Add to this object in later steps.
------------------------------------------------------------- */
+/* --- State ------------------------------------------------ */
 const state = {
   currentIndex: 0,
   responses: [],
@@ -15,23 +13,21 @@ const state = {
 };
 
 /* --- DOM References --------------------------------------- */
-const landingPage   = document.getElementById('landing-page');
-const quizPage      = document.getElementById('quiz-page');
-const startBtn      = document.getElementById('start-btn');
-const startNote     = document.getElementById('start-note');
-const depletionScale = document.getElementById('depletion-scale');
-const progressFill  = document.getElementById('progress-bar-fill');
-const progressLabel = document.getElementById('progress-label');
+const landingPage      = document.getElementById('landing-page');
+const quizPage         = document.getElementById('quiz-page');
+const startBtn         = document.getElementById('start-btn');
+const startNote        = document.getElementById('start-note');
+const depletionScale   = document.getElementById('depletion-scale');
+const progressFill     = document.getElementById('progress-bar-fill');
+const progressLabel    = document.getElementById('progress-label');
 const questionCategory = document.getElementById('question-category');
-const questionText  = document.getElementById('question-text');
-const answerGrid    = document.getElementById('answer-grid');
-const backBtn       = document.getElementById('back-btn');
-const nextBtn       = document.getElementById('next-btn');
+const questionText     = document.getElementById('question-text');
+const answerGrid       = document.getElementById('answer-grid');
+const backBtn          = document.getElementById('back-btn');
+const nextBtn          = document.getElementById('next-btn');
 
 /* ============================================================
    DEPLETION SCALE
-   Renders 10 numbered buttons and saves the chosen value
-   to state.depletionScore. Enables the Start button once set.
 ============================================================ */
 function buildDepletionScale() {
   for (let i = 1; i <= 10; i++) {
@@ -41,56 +37,48 @@ function buildDepletionScale() {
     btn.setAttribute('aria-label', 'Depletion level ' + i);
 
     btn.addEventListener('click', function () {
-      // Clear previous selection
       document.querySelectorAll('.depletion-btn').forEach(function (b) {
         b.classList.remove('selected');
       });
-
-      // Mark this button selected
       btn.classList.add('selected');
-
-      // Save to state
       state.depletionScore = i;
-
-      // Enable Start button and hide the helper note
       startBtn.disabled = false;
       startNote.style.display = 'none';
     });
 
     depletionScale.appendChild(btn);
   }
-} function shuffleQuestionsWithRules(questionsArray) {
+}
+
+/* ============================================================
+   SHUFFLE — no same category back-to-back,
+   no two scenarios in a row
+============================================================ */
+function shuffleQuestionsWithRules(questionsArray) {
   const pool = [...questionsArray];
   const ordered = [];
 
   while (pool.length > 0) {
-    const candidates = pool.filter((q) => {
+    const candidates = pool.filter(function (q) {
       const last = ordered[ordered.length - 1];
-
       if (!last) return true;
-
       const sameCategory = q.category === last.category;
       const twoScenarios = q.type === 'scenario' && last.type === 'scenario';
-
       return !sameCategory && !twoScenarios;
     });
 
     const source = candidates.length > 0 ? candidates : pool;
     const nextQuestion = source[Math.floor(Math.random() * source.length)];
-
     ordered.push(nextQuestion);
-
-    const indexToRemove = pool.findIndex((q) => q.id === nextQuestion.id);
+    const indexToRemove = pool.findIndex(function (q) { return q.id === nextQuestion.id; });
     pool.splice(indexToRemove, 1);
   }
 
   return ordered;
 }
+
 /* ============================================================
    QUIZ INITIALIZATION
-   Resets state and pre-fills the responses array based on
-   however many questions content.js provides (or placeholder
-   if content.js is empty).
 ============================================================ */
 function initQuiz() {
   state.currentIndex = 0;
@@ -100,6 +88,7 @@ function initQuiz() {
   } else {
     state.orderedQuestions = [
       {
+        id: 'placeholder_1',
         category: 'placeholder',
         type: 'scenario',
         question: 'This is a placeholder question.',
@@ -114,28 +103,32 @@ function initQuiz() {
   }
 
   state.responses = new Array(state.orderedQuestions.length).fill(null);
-
-  renderQuestion();   
+  renderQuestion();
 }
+
 /* ============================================================
    RENDER QUESTION
 ============================================================ */
 function renderQuestion() {
   const index = state.currentIndex;
   const total = state.responses.length;
-
-  let currentQuestion = state.orderedQuestions[index];
+  const currentQuestion = state.orderedQuestions[index];
 
   const categoryLabels = {
-    somatic: 'Somatically Sensitive',
-    self: 'Self-Relationship',
-    approval: 'Approval',
+    somatic:     'Somatically Sensitive',
+    self:        'Self-Relationship',
+    approval:    'Approval',
+    connection:  'Connection',
+    attachment:  'Attachment',
+    capacity:    'Capacity',
+    change:      'Change',
+    humanity:    'Humanity',
+    uncertainty: 'Uncertainty',
     placeholder: 'Category'
   };
 
   const categoryDisplay = categoryLabels[currentQuestion.category] || currentQuestion.category;
   questionCategory.textContent = categoryDisplay;
-
   questionText.textContent = currentQuestion.question || '';
 
   const percent = ((index + 1) / total) * 100;
@@ -170,7 +163,6 @@ function renderQuestion() {
 ============================================================ */
 function selectAnswer(value) {
   const index = state.currentIndex;
-
   state.responses[index] = value;
 
   document.querySelectorAll('.answer-btn').forEach(function (btn) {
@@ -189,9 +181,7 @@ function selectAnswer(value) {
 function updateNextBtn() {
   const index = state.currentIndex;
   const hasAnswer = state.responses[index] !== null;
-
   nextBtn.disabled = !hasAnswer;
-
   const isLast = (index === state.responses.length - 1);
   nextBtn.textContent = isLast ? 'See My Results' : 'Next';
 }
@@ -199,9 +189,8 @@ function updateNextBtn() {
 nextBtn.addEventListener('click', function () {
   const index = state.currentIndex;
   const isLast = (index === state.responses.length - 1);
-
   if (isLast) {
-    console.log('Quiz complete', state.responses);
+    showResults();
   } else {
     state.currentIndex++;
     renderQuestion();
@@ -225,12 +214,207 @@ startBtn.addEventListener('click', function () {
 });
 
 /* ============================================================
+   SCORING ENGINE — Step 3
+============================================================ */
+
+/* Category display metadata */
+const categoryMeta = {
+  somatic:     { label: 'Somatic',     fullLabel: 'Somatically Sensitive' },
+  self:        { label: 'Self',        fullLabel: 'Self-Relationship' },
+  approval:    { label: 'Approval',    fullLabel: 'Approval' },
+  connection:  { label: 'Connection',  fullLabel: 'Connection' },
+  attachment:  { label: 'Attachment',  fullLabel: 'Attachment' },
+  capacity:    { label: 'Capacity',    fullLabel: 'Capacity' },
+  change:      { label: 'Change',      fullLabel: 'Change' },
+  humanity:    { label: 'Humanity',    fullLabel: 'Globally Sensitive' },
+  uncertainty: { label: 'Uncertainty', fullLabel: 'Uncertainty' }
+};
+
+/* Assign tier based on score */
+function getTier(score) {
+  if (score <= 5)  return { name: 'Resilient Area',       key: 'resilient' };
+  if (score <= 8)  return { name: 'Mild Sensitivity',     key: 'mild' };
+  if (score <= 10) return { name: 'Moderate Sensitivity', key: 'moderate' };
+  return               { name: 'Active Stress Zone',      key: 'active' };
+}
+
+/* Depletion context message */
+function depletionNote(score) {
+  if (score <= 3) {
+    return 'Your depletion level today is low (' + score + '/10). Your scores are likely a reliable reflection of your baseline stress patterns.';
+  } else if (score <= 6) {
+    return 'Your depletion level today is moderate (' + score + '/10). Some scores may be slightly elevated compared to a more rested baseline, and that is worth keeping in mind as you read your results.';
+  } else {
+    return 'Your depletion level today is high (' + score + '/10). When your nervous system is running low on resources, stress patterns tend to feel more intense. Your scores today may reflect that added strain rather than your baseline pattern alone.';
+  }
+}
+
+/* Tally scores by category using the shuffled orderedQuestions */
+function calculateScores() {
+  const totals = {};
+
+  state.orderedQuestions.forEach(function (q, i) {
+    const cat = q.category;
+    if (!(cat in totals)) totals[cat] = 0;
+    const response = state.responses[i];
+    if (response !== null) totals[cat] += response;
+  });
+
+  return totals;
+}
+
+/* ============================================================
+   RENDER RESULTS
+============================================================ */
+function showResults() {
+  quizPage.classList.add('hidden');
+  document.getElementById('results-page').classList.remove('hidden');
+  window.scrollTo(0, 0);
+
+  const totals = calculateScores();
+
+  /* Build sorted array high to low */
+  const sorted = Object.keys(totals).map(function (cat) {
+    const score = totals[cat];
+    const tier  = getTier(score);
+    const meta  = categoryMeta[cat] || { label: cat, fullLabel: cat };
+    return { category: cat, score: score, tier: tier, label: meta.label, fullLabel: meta.fullLabel };
+  }).sort(function (a, b) { return b.score - a.score; });
+
+  /* Primary: highest score — all ties are co-Primaries */
+  const highScore = sorted[0].score;
+  const primaries = sorted.filter(function (c) { return c.score === highScore; });
+
+  /* Resilience Areas: lowest 3 scores */
+  const byScoreAsc = sorted.slice().sort(function (a, b) { return a.score - b.score; });
+  const resilience = byScoreAsc.slice(0, 3);
+
+  /* --- Results title --- */
+  if (primaries.length === 1) {
+    document.getElementById('results-title').textContent =
+      'Your primary stress type: ' + primaries[0].fullLabel;
+  } else {
+    const names = primaries.map(function (p) { return p.fullLabel; }).join(' and ');
+    document.getElementById('results-title').textContent =
+      'Your primary stress types: ' + names;
+  }
+
+  /* --- Depletion context note --- */
+  const depEl = document.getElementById('depletion-context');
+  depEl.textContent = depletionNote(state.depletionScore);
+  if (state.depletionScore >= 7) depEl.classList.add('high-depletion');
+
+  /* --- Primary block --- */
+  const primaryContent = document.getElementById('primary-content');
+  primaryContent.innerHTML = '';
+  const tagContainer = document.createElement('div');
+  tagContainer.classList.add('primary-tags');
+  primaries.forEach(function (p) {
+    const tag = document.createElement('span');
+    tag.classList.add('primary-tag');
+    tag.textContent = p.fullLabel;
+    tagContainer.appendChild(tag);
+  });
+  const scoreNote = document.createElement('p');
+  scoreNote.classList.add('primary-score');
+  scoreNote.textContent = primaries.map(function (p) {
+    return p.fullLabel + ': ' + p.score + '/15 — ' + p.tier.name;
+  }).join('   |   ');
+  primaryContent.appendChild(tagContainer);
+  primaryContent.appendChild(scoreNote);
+
+  /* --- Resilience block --- */
+  const resContent = document.getElementById('resilience-content');
+  resContent.innerHTML = '';
+  const resContainer = document.createElement('div');
+  resContainer.classList.add('resilience-tags');
+  resilience.forEach(function (r) {
+    const tag = document.createElement('span');
+    tag.classList.add('resilience-tag');
+    tag.textContent = r.fullLabel;
+    resContainer.appendChild(tag);
+  });
+  resContent.appendChild(resContainer);
+
+  /* --- Bar graph --- */
+  const graph = document.getElementById('bar-graph');
+  graph.innerHTML = '';
+  const maxScore = 15;
+
+  sorted.forEach(function (item) {
+    const row = document.createElement('div');
+    row.classList.add('bar-row');
+
+    const label = document.createElement('span');
+    label.classList.add('bar-label');
+    label.textContent = item.label;
+
+    const track = document.createElement('div');
+    track.classList.add('bar-track');
+
+    const fill = document.createElement('div');
+    fill.classList.add('bar-fill', 'tier-' + item.tier.key);
+    fill.style.width = '0%';
+    track.appendChild(fill);
+
+    const scoreEl = document.createElement('span');
+    scoreEl.classList.add('bar-score');
+    scoreEl.textContent = item.score;
+
+    row.appendChild(label);
+    row.appendChild(track);
+    row.appendChild(scoreEl);
+    graph.appendChild(row);
+
+    /* Animate bar after paint */
+    setTimeout(function () {
+      fill.style.width = ((item.score / maxScore) * 100) + '%';
+    }, 80);
+  });
+}
+
+/* ============================================================
    ON LOAD
 ============================================================ */
 document.addEventListener('DOMContentLoaded', function () {
   buildDepletionScale();
+
+  /* Retake button */
+  const retakeBtn = document.getElementById('retake-btn');
+  if (retakeBtn) {
+    retakeBtn.addEventListener('click', function () {
+      state.currentIndex = 0;
+      state.responses = [];
+      state.depletionScore = null;
+      state.orderedQuestions = [];
+
+      document.querySelectorAll('.depletion-btn').forEach(function (b) {
+        b.classList.remove('selected');
+      });
+
+      document.getElementById('primary-content').innerHTML = '';
+      document.getElementById('resilience-content').innerHTML = '';
+      document.getElementById('bar-graph').innerHTML = '';
+      const depEl = document.getElementById('depletion-context');
+      depEl.textContent = '';
+      depEl.classList.remove('high-depletion');
+      document.getElementById('results-title').textContent = 'Your Results';
+
+      startBtn.disabled = true;
+      startNote.style.display = '';
+
+      document.getElementById('results-page').classList.add('hidden');
+      quizPage.classList.add('hidden');
+      landingPage.classList.remove('hidden');
+      window.scrollTo(0, 0);
+    });
+  }
+
+  /* Stripe placeholder */
+  const stripeBtn = document.getElementById('stripe-btn');
+  if (stripeBtn) {
+    stripeBtn.addEventListener('click', function () {
+      alert('Payment coming soon. Please email robin@happierhour.com with a screenshot of your results to get started.');
+    });
+  }
 });
-
-
-
-
