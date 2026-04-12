@@ -190,6 +190,197 @@ const questions = [
       { text: "Sometimes", score: 2 },
       { text: "Never or rarely", score: 3 }
     ]
-  }
+  },
+  // -------------------------
+// CONNECTION
+// -------------------------
+{
+  id: "connection_1",
+  category: "connection",
+  type: "scenario",
+  question: "You feel some distance from a loved one — nothing dramatic, just off. You notice:",
+  answers: [
+    { text: "You feel the distance but still feel loved and connected", score: 0 },
+    { text: "You feel the distance and a subtle uneasiness", score: 1 },
+    { text: "You start to feel less loved, and it begins to affect your mood", score: 2 },
+    { text: "You feel a sharp drop in feeling loved, and everything starts to feel less good", score: 3 }
+  ]
+},
+{
+  id: "connection_2",
+  category: "connection",
+  type: "scenario",
+  question: "Someone important to you repeatedly overrides your needs or dismisses your input. Over time you notice:",
+  answers: [
+    { text: "You see the pattern clearly, speak up, and trust your needs matter in the relationship", score: 0 },
+    { text: "You feel frustrated and sometimes resentful, but still believe your needs matter", score: 1 },
+    { text: "You start to feel less seen and speak up less", score: 2 },
+    { text: "You feel unseen and alone in the relationship", score: 3 }
+  ]
+},
+{
+  id: "connection_3",
+  category: "connection",
+  type: "vulnerability",
+  question: "When I don’t feel loved in an important relationship, I feel anxious and more fragile.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "connection_4",
+  category: "connection",
+  type: "vulnerability",
+  question: "When someone I care about is upset with me, I quickly assume they don’t like me.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "connection_5",
+  category: "connection",
+  type: "resilience",
+  question: "Even during conflict, I still know I matter in the relationship.",
+  answers: [
+    { text: "Almost always", score: 0 },
+    { text: "Often", score: 1 },
+    { text: "Sometimes", score: 2 },
+    { text: "Never or rarely", score: 3 }
+  ]
+},
+
+// -------------------------
+// ATTACHMENT
+// -------------------------
+{
+  id: "attachment_1",
+  category: "attachment",
+  type: "scenario",
+  question: "Someone you love is struggling, and there’s nothing you can do to fix it. You notice:",
+  answers: [
+    { text: "You feel deeply for them and stay grounded in yourself", score: 0 },
+    { text: "You feel it strongly and it stays with you, but you don’t lose yourself", score: 1 },
+    { text: "You start to take on their distress and feel less like yourself", score: 2 },
+    { text: "You feel like you can’t be okay unless they are okay", score: 3 }
+  ]
+},
+{
+  id: "attachment_2",
+  category: "attachment",
+  type: "scenario",
+  question: "You are supporting someone you love over an extended period, and their needs don’t let up. You notice:",
+  answers: [
+    { text: "You’re there for them, but your life doesn’t revolve around it", score: 0 },
+    { text: "You feel the weight of it all, but are able to take care of yourself as well", score: 1 },
+    { text: "You feel responsible for holding everything together and start to lose your footing", score: 2 },
+    { text: "It feels like it’s all on you, and you can’t step back", score: 3 }
+  ]
+},
+{
+  id: "attachment_3",
+  category: "attachment",
+  type: "vulnerability",
+  question: "I tend to prioritize my loved ones’ needs over my own.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "attachment_4",
+  category: "attachment",
+  type: "vulnerability",
+  question: "I feel responsible for my loved ones’ well-being, even when it isn’t mine to carry.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "attachment_5",
+  category: "attachment",
+  type: "resilience",
+  question: "I can care deeply about someone without taking it on as my own.",
+  answers: [
+    { text: "Almost always", score: 0 },
+    { text: "Often", score: 1 },
+    { text: "Sometimes", score: 2 },
+    { text: "Never or rarely", score: 3 }
+  ]
+},
+
+// -------------------------
+// CAPACITY
+// -------------------------
+{
+  id: "capacity_1",
+  category: "capacity",
+  type: "scenario",
+  question: "You’re in a stretch where the demands on you don’t let up — work, family, obligations. You notice:",
+  answers: [
+    { text: "You feel steady and able to stay focused on what matters", score: 0 },
+    { text: "You feel pressure building, but can still stay on top of things", score: 1 },
+    { text: "You feel stretched and mentally scattered, like it’s getting harder to keep up", score: 2 },
+    { text: "You feel overwhelmed and like everything is starting to fall apart", score: 3 }
+  ]
+},
+{
+  id: "capacity_2",
+  category: "capacity",
+  type: "scenario",
+  question: "When your plate already feels full and someone asks you to take on something more, you notice:",
+  answers: [
+    { text: "You assess it and either take it on or say no without much strain", score: 0 },
+    { text: "You feel the pressure, but are able to think it through before responding", score: 1 },
+    { text: "You feel on the edge of overwhelm and aren’t sure you can handle much more", score: 2 },
+    { text: "You feel completely overwhelmed and like you can’t function", score: 3 }
+  ]
+},
+{
+  id: "capacity_3",
+  category: "capacity",
+  type: "vulnerability",
+  question: "My plate fills up quickly, even when I try to manage it.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "capacity_4",
+  category: "capacity",
+  type: "vulnerability",
+  question: "When it feels like too much, I put things off or avoid what needs to get done.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "capacity_5",
+  category: "capacity",
+  type: "resilience",
+  question: "I handle a full load without getting overwhelmed.",
+  answers: [
+    { text: "Almost always", score: 0 },
+    { text: "Often", score: 1 },
+    { text: "Sometimes", score: 2 },
+    { text: "Never or rarely", score: 3 }
+  ]
+},
 
 ];
