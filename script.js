@@ -192,15 +192,60 @@ function updateNextBtn() {
 
 /* Category display metadata */
 const categoryMeta = {
-  somatic:     { label: 'Somatic',     fullLabel: 'Somatically Sensitive' },
-  self:        { label: 'Self',        fullLabel: 'Self-Relationship' },
-  approval:    { label: 'Approval',    fullLabel: 'Approval' },
-  connection:  { label: 'Connection',  fullLabel: 'Connection' },
-  attachment:  { label: 'Attachment',  fullLabel: 'Attachment' },
-  capacity:    { label: 'Capacity',    fullLabel: 'Capacity' },
-  change:      { label: 'Change',      fullLabel: 'Change' },
-  humanity:    { label: 'Humanity',    fullLabel: 'Globally Sensitive' },
-  uncertainty: { label: 'Uncertainty', fullLabel: 'Uncertainty' }
+  somatic: {
+    label: 'Somatic',
+    fullLabel: 'Somatically Sensitive',
+    zoomInTrap: 'Pain becomes the lens through which everything is filtered, and little else gets through.',
+    resilienceNote: 'Your body is already a source of steadiness for you, and that is worth noticing.'
+  },
+  self: {
+    label: 'Self',
+    fullLabel: 'Self-Judgment Sensitive',
+    zoomInTrap: 'One mistake becomes proof of a deeper flaw, and the inner critic runs the story.',
+    resilienceNote: 'Your sense of your own worth is stable and hard to shake, even when things go wrong.'
+  },
+  approval: {
+    label: 'Approval',
+    fullLabel: 'Approval-Sensitive',
+    zoomInTrap: "Others' opinions become the measure of your value, and the ground shifts when someone disapproves.",
+    resilienceNote: "Your self-perception doesn't depend heavily on how others see you, and that is a genuine steadying resource."
+  },
+  connection: {
+    label: 'Connection',
+    fullLabel: 'Connection-Sensitive',
+    zoomInTrap: 'Distance from someone you love starts to feel like being unloved, even when the evidence says otherwise.',
+    resilienceNote: 'Closeness comes naturally to you, and connection is reliably available as a source of steadiness.'
+  },
+  attachment: {
+    label: 'Attachment',
+    fullLabel: 'Attachment-Sensitive',
+    zoomInTrap: "A loved one's pain becomes indistinguishable from your own, and the weight of caring starts to cost you your footing.",
+    resilienceNote: 'You can be fully present with someone you love without losing yourself in what they are carrying.'
+  },
+  capacity: {
+    label: 'Capacity',
+    fullLabel: 'Capacity-Sensitive',
+    zoomInTrap: 'Everything feels urgent and nothing feels finishable, and the weight of feeling like you are failing everyone starts to close in.',
+    resilienceNote: 'You can triage and prioritize under pressure without losing sight of what matters most.'
+  },
+  change: {
+    label: 'Change',
+    fullLabel: 'Change-Sensitive',
+    zoomInTrap: 'You feel unmoored — no longer connected to who you were and not yet connected to who you are becoming.',
+    resilienceNote: 'You can hold transition with curiosity rather than dread, staying connected to yourself even when the ground feels different.'
+  },
+  humanity: {
+    label: 'Humanity',
+    fullLabel: 'Globally Sensitive',
+    zoomInTrap: "The world's suffering lands as your own, and the grief or rage is hard to set down.",
+    resilienceNote: 'You can hold the weight of what is happening in the world without being flooded by it.'
+  },
+  uncertainty: {
+    label: 'Uncertainty',
+    fullLabel: 'Uncertainty-Sensitive',
+    zoomInTrap: 'When the future is unclear, your nervous system fills the gap with the worst possible version of it.',
+    resilienceNote: 'You can sit with not-knowing without catastrophizing, and that tolerance is a genuine resource.'
+  }
 };
 
 /* Assign tier based on score */
@@ -314,13 +359,26 @@ function showResults() {
   graph.innerHTML = '';
   const maxScore = 15;
 
-  sorted.forEach(function (item) {
+  sorted.forEach(function (item, idx) {
     const row = document.createElement('div');
     row.classList.add('bar-row');
+
+    /* Label column */
+    const labelWrap = document.createElement('div');
+    labelWrap.classList.add('bar-label-wrap');
 
     const label = document.createElement('span');
     label.classList.add('bar-label');
     label.textContent = item.label;
+    labelWrap.appendChild(label);
+
+    /* Mark the top bar as Primary */
+    if (idx === 0) {
+      const primaryBadge = document.createElement('span');
+      primaryBadge.classList.add('bar-primary-badge');
+      primaryBadge.textContent = 'Primary';
+      labelWrap.appendChild(primaryBadge);
+    }
 
     const track = document.createElement('div');
     track.classList.add('bar-track');
@@ -334,7 +392,7 @@ function showResults() {
     scoreEl.classList.add('bar-score');
     scoreEl.textContent = item.score;
 
-    row.appendChild(label);
+    row.appendChild(labelWrap);
     row.appendChild(track);
     row.appendChild(scoreEl);
     graph.appendChild(row);
@@ -344,6 +402,23 @@ function showResults() {
       fill.style.width = ((item.score / maxScore) * 100) + '%';
     }, 80);
   });
+
+  /* --- Mirror paragraph (after bar graph, before CTA) --- */
+  const mirrorEl = document.getElementById('mirror-paragraph');
+  if (mirrorEl) {
+    const primary = primaries[0];
+    const meta = categoryMeta[primary.category];
+    let mirrorText = '';
+    if (meta) {
+      if (primaries.length === 1) {
+        mirrorText = 'Your highest score is ' + primary.fullLabel + '. When this is your primary pattern, ' + meta.zoomInTrap.charAt(0).toLowerCase() + meta.zoomInTrap.slice(1) + ' This may be how your nervous system is wired, or it may be where you are right now. Either way, seeing it clearly is the first step to working with it instead of being pulled by it.';
+      } else {
+        const names = primaries.map(function(p) { return p.fullLabel; }).join(' and ');
+        mirrorText = 'Your highest scores are tied across ' + names + '. These are the areas where your nervous system is working hardest right now. This may be how you are wired, or it may reflect where you are in this season. Either way, seeing it clearly is the first step to working with it instead of being pulled by it.';
+      }
+    }
+    mirrorEl.textContent = mirrorText;
+  }
 }
 
 /* ============================================================
