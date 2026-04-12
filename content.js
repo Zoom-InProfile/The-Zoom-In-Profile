@@ -382,5 +382,195 @@ const questions = [
     { text: "Never or rarely", score: 3 }
   ]
 },
+// ---------------------------
+  // CHANGE
+  // ---------------------------
+  {
+    id: "change_1",
+    category: "change",
+    type: "scenario",
+    question: "You experience a major change that you weren't prepared for and didn't see coming. You notice:",
+    answers: [
+      { text: "You find your footing quickly and stay open to the possibilities ahead", score: 0 },
+      { text: "You feel unsettled and disoriented, but you adjust and begin to open up to what's next", score: 1 },
+      { text: "You feel stuck in what you lost, and it's hard to move forward or imagine anything new", score: 2 },
+      { text: "You feel like you lost yourself and can't find who you are in this new version of your life", score: 3 }
+    ]
+  },
+  {
+    id: "change_2",
+    category: "change",
+    type: "scenario",
+    question: "You made a change you wanted and there have been many challenges. You notice:",
+    answers: [
+      { text: "You expected some disruption and find your footing without losing confidence in your decision", score: 0 },
+      { text: "You feel unsettled by the challenges, but you trust your decision and stay open", score: 1 },
+      { text: "The disruption is harder than you anticipated and you question whether you made the right choice", score: 2 },
+      { text: "You feel like you made a mistake and can't stop measuring everything against how it was before", score: 3 }
+    ]
+  },
+  {
+    id: "change_3",
+    category: "change",
+    type: "vulnerability",
+    question: "I find myself dreading upcoming changes even when I know they might be good for me.",
+    answers: [
+      { text: "Never or rarely", score: 0 },
+      { text: "Sometimes", score: 1 },
+      { text: "Often", score: 2 },
+      { text: "Almost always", score: 3 }
+    ]
+  },
+  {
+    id: "change_4",
+    category: "change",
+    type: "resilience",
+    question: "When things change, I stay open to what's coming rather than dwelling on what I lost.",
+    answers: [
+      { text: "Almost always", score: 0 },
+      { text: "Often", score: 1 },
+      { text: "Sometimes", score: 2 },
+      { text: "Never or rarely", score: 3 }
+    ]
+  },
+  {
+    id: "change_5",
+    category: "change",
+    type: "resilience",
+    question: "I'm comfortable trying new things even when I'm not good at them yet.",
+    answers: [
+      { text: "Almost always", score: 0 },
+      { text: "Often", score: 1 },
+      { text: "Sometimes", score: 2 },
+      { text: "Never or rarely", score: 3 }
+    ]
+  },
 
+  // ---------------------------
+  // HUMANITY
+  // ---------------------------
+  {
+    id: "global_1",
+    category: "humanity",
+    type: "scenario",
+    question: "The news has been relentless for weeks, conflict, injustice, things that feel unfixable. You notice:",
+    answers: [
+      { text: "You stay informed without over-consuming and don't get pulled under by it", score: 0 },
+      { text: "You feel a low hum of collective sadness in the background, but it doesn't follow you into your day", score: 1 },
+      { text: "You feel angry and helpless, and it starts to affect your mood and your ability to focus", score: 2 },
+      { text: "You cycle between numbing out and being overwhelmed, and it starts to affect your relationships and your ability to function", score: 3 }
+    ]
+  },
+  {
+    id: "global_2",
+    category: "humanity",
+    type: "scenario",
+    question: "You witness or learn about something that deeply violates your sense of what is right, in an institution, a community, or the world. You notice:",
+    answers: [
+      { text: "You feel genuinely upset without taking the pain on as your own", score: 0 },
+      { text: "You feel disturbed and sit with it for a while, but find your way back to yourself without too much difficulty", score: 1 },
+      { text: "A weight settles in and stays, making it harder to be fully present in your own life", score: 2 },
+      { text: "You lose trust in people or institutions, and it becomes hard to feel grounded or safe in your own life", score: 3 }
+    ]
+  },
+  {
+    id: "global_3",
+    category: "humanity",
+    type: "vulnerability",
+    question: "I tend to suffer when terrible things happen in the world, as if they are happening to me.",
+    answers: [
+      { text: "Never or rarely", score: 0 },
+      { text: "Sometimes", score: 1 },
+      { text: "Often", score: 2 },
+      { text: "Almost always", score: 3 }
+    ]
+  },
+  {
+    id: "global_4",
+    category: "humanity",
+    type: "resilience",
+    question: "I tend to stay focused on my purpose and hopefulness despite the suffering or injustices in the world.",
+    answers: [
+      { text: "Almost always", score: 0 },
+      { text: "Often", score: 1 },
+      { text: "Sometimes", score: 2 },
+      { text: "Never or rarely", score: 3 }
+    ]
+  },
+  {
+    id: "global_5",
+    category: "humanity",
+    type: "resilience",
+    question: "I allow myself moments of hope or beauty without guilt when the world feels heavy.",
+    answers: [
+      { text: "Almost always", score: 0 },
+      { text: "Often", score: 1 },
+      { text: "Sometimes", score: 2 },
+      { text: "Never or rarely", score: 3 }
+    ]
+  },
+
+  // ---------------------------
+  // UNCERTAINTY
+  // ---------------------------
+  {
+    id: "uncertainty_1",
+    category: "uncertainty",
+    type: "scenario",
+    question: "You're waiting for important news that could take days or weeks. You notice:",
+    answers: [
+      { text: "You know the uncertainty is temporary and stay focused on what you can do today", score: 0 },
+      { text: "You feel tension and check for updates more than usual, but it doesn't affect your sleep or your day", score: 1 },
+      { text: "Your mind rehearses worst-case outcomes, as if preparing now will soften the blow later", score: 2 },
+      { text: "A fear you can't reason your way out of settles in and stays, making it hard to feel okay until you know", score: 3 }
+    ]
+  },
+  {
+    id: "uncertainty_2",
+    category: "uncertainty",
+    type: "scenario",
+    question: "You're dealing with a situation that may not have a clear resolution for a long time, possibly ever. You notice:",
+    answers: [
+      { text: "You accept that some things stay unresolved and it doesn't occupy much of your thinking", score: 0 },
+      { text: "You think about it more than you'd like, but you can set it aside and function normally most of the time", score: 1 },
+      { text: "It sits in the background of most days, pulling at your attention and making it hard to feel fully settled", score: 2 },
+      { text: "The open-endedness feels unbearable, and your mind keeps returning to it with fear or dread no matter what you do", score: 3 }
+    ]
+  },
+  {
+    id: "uncertainty_3",
+    category: "uncertainty",
+    type: "vulnerability",
+    question: "I tend to catastrophize when something important is uncertain.",
+    answers: [
+      { text: "Never or rarely", score: 0 },
+      { text: "Sometimes", score: 1 },
+      { text: "Often", score: 2 },
+      { text: "Almost always", score: 3 }
+    ]
+  },
+  {
+    id: "uncertainty_4",
+    category: "uncertainty",
+    type: "vulnerability",
+    question: "Uncertainty or threats send me looking for information about what could go wrong.",
+    answers: [
+      { text: "Never or rarely", score: 0 },
+      { text: "Sometimes", score: 1 },
+      { text: "Often", score: 2 },
+      { text: "Almost always", score: 3 }
+    ]
+  },
+  {
+    id: "uncertainty_5",
+    category: "uncertainty",
+    type: "resilience",
+    question: "My mind typically goes to what I want to happen rather than what I don't.",
+    answers: [
+      { text: "Almost always", score: 0 },
+      { text: "Often", score: 1 },
+      { text: "Sometimes", score: 2 },
+      { text: "Never or rarely", score: 3 }
+    ]
+  }
 ];
