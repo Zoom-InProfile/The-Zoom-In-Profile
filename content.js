@@ -246,7 +246,7 @@ const questions = [
   id: "connection_5",
   category: "connection",
   type: "resilience",
-  question: "Even during conflict, I still know I matter in the relationship.",
+  question: "When someone I love is quiet or distant, I trust that it isn't about me.",
   answers: [
     { text: "Almost always", score: 0 },
     { text: "Often", score: 1 },
@@ -264,10 +264,10 @@ const questions = [
   type: "scenario",
   question: "Someone you love is struggling, and there’s nothing you can do to fix it. You notice:",
   answers: [
-    { text: "You feel deeply for them and stay grounded in yourself", score: 0 },
-    { text: "You feel it strongly and it stays with you, but you don’t lose yourself", score: 1 },
-    { text: "You start to take on their distress and feel less like yourself", score: 2 },
-    { text: "You feel like you can’t be okay unless they are okay", score: 3 }
+    { text: "You feel deeply for them and maintain your own daily life", score: 0 },
+    { text: "Their pain stays with you, but you don't lose yourself in it", score: 1 },
+    { text: "You start to take on their distress and it becomes hard to feel okay yourself", score: 2 },
+    { text: "You can't separate their pain from your own and your well-being depends on theirs", score: 3 }
   ]
 },
 {
@@ -310,7 +310,7 @@ const questions = [
   id: "attachment_5",
   category: "attachment",
   type: "resilience",
-  question: "I can care deeply about someone without taking it on as my own.",
+  question: "I care deeply about the people in my life without taking their pain on as my own.",
   answers: [
     { text: "Almost always", score: 0 },
     { text: "Often", score: 1 },
