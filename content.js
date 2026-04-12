@@ -159,12 +159,12 @@ const questions = [
     id: "approval_3",
     category: "approval",
     type: "scenario",
-    question: "Someone close to you keeps pushing their opinion after you’ve made your position clear. You notice:",
+    question: "Someone close to you strongly disagrees with your choices and makes it clear they don’t approve. You notice:",
     answers: [
-      { text: "You hold your ground without much internal charge, and the relationship feels intact", score: 0 },
-      { text: "You feel irritated but let it go once the moment passes", score: 1 },
-      { text: "You withdraw or replay the interaction with frustration", score: 2 },
-      { text: "You feel strong anger or an urge to shut down or cut off, and it lingers", score: 3 }
+      { text: "You stay grounded in your position, even if they don’t approve", score: 0 },
+      { text: "You feel the tension, but can still stay connected to what you believe", score: 1 },
+      { text: "You feel pulled by their disapproval and start to get defensive or question yourself", score: 2 },
+      { text: "You feel triggered and reactive — it’s hard to think clearly and you snap or shut down", score: 3 }
     ]
   },
   {
