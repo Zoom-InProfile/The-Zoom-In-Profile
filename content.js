@@ -139,8 +139,8 @@ const questions = [
     answers: [
       { text: "You feel some nerves, but prepare and trust yourself — the anxiety becomes energy", score: 0 },
       { text: "You feel real anxiety, but usually find your footing once you begin", score: 1 },
-      { text: "You imagine being judged and struggle to access confidence", score: 2 },
-      { text: "You get pulled into worst-case thinking and have trouble pulling back", score: 3 }
+      { text: "You find yourself thinking a lot about how you’ll come across and trying to get it just right", score: 2 },
+      { text: "You become highly focused on how you’re being perceived — adjusting, rehearsing, or shaping yourself to land well", score: 3 }
     ]
   },
   {
