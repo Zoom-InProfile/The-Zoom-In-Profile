@@ -122,7 +122,16 @@ function renderQuestion() {
   progressFill.style.width = percent + '%';
   progressLabel.textContent = 'Question ' + (index + 1) + ' of ' + total;
   answerGrid.innerHTML = '';
-  currentQuestion.answers.forEach(function (option) {
+  /* Shuffle answers so score-0 is not always first */
+  var shuffledAnswers = currentQuestion.answers.slice();
+  for (var i = shuffledAnswers.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = shuffledAnswers[i];
+    shuffledAnswers[i] = shuffledAnswers[j];
+    shuffledAnswers[j] = temp;
+  }
+
+  shuffledAnswers.forEach(function (option) {
     const btn = document.createElement('button');
     btn.textContent = option.text;
     btn.classList.add('answer-btn');
