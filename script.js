@@ -267,17 +267,15 @@ function depletionNote(score) {
   }
 }
 
-/* Tally scores by category using the shuffled orderedQuestions */
+/* Tally scores by category */
 function calculateScores() {
   const totals = {};
-
   state.orderedQuestions.forEach(function (q, i) {
     const cat = q.category;
     if (!(cat in totals)) totals[cat] = 0;
     const response = state.responses[i];
     if (response !== null) totals[cat] += response;
   });
-
   return totals;
 }
 
@@ -291,7 +289,6 @@ function showResults() {
 
   const totals = calculateScores();
 
-  /* Build sorted array high to low */
   const sorted = Object.keys(totals).map(function (cat) {
     const score = totals[cat];
     const tier  = getTier(score);
@@ -299,30 +296,28 @@ function showResults() {
     return { category: cat, score: score, tier: tier, label: meta.label, fullLabel: meta.fullLabel };
   }).sort(function (a, b) { return b.score - a.score; });
 
-  /* Primary: highest score — all ties are co-Primaries */
   const highScore = sorted[0].score;
   const primaries = sorted.filter(function (c) { return c.score === highScore; });
 
-  /* Resilience Areas: lowest 3 scores */
   const byScoreAsc = sorted.slice().sort(function (a, b) { return a.score - b.score; });
   const resilience = byScoreAsc.slice(0, 3);
 
-  /* --- Results title --- */
+  /* Results title */
   if (primaries.length === 1) {
     document.getElementById('results-title').textContent =
-      'Your primary stress type: ' + primaries[0].fullLabel;
+      'Your Primary Stress Type: ' + primaries[0].fullLabel;
   } else {
     const names = primaries.map(function (p) { return p.fullLabel; }).join(' and ');
     document.getElementById('results-title').textContent =
-      'Your primary stress types: ' + names;
+      'Your Primary Stress Types: ' + names;
   }
 
-  /* --- Depletion context note --- */
+  /* Depletion context */
   const depEl = document.getElementById('depletion-context');
   depEl.textContent = depletionNote(state.depletionScore);
   if (state.depletionScore >= 7) depEl.classList.add('high-depletion');
 
-  /* --- Primary block --- */
+  /* Primary block */
   const primaryContent = document.getElementById('primary-content');
   primaryContent.innerHTML = '';
   const tagContainer = document.createElement('div');
@@ -341,7 +336,7 @@ function showResults() {
   primaryContent.appendChild(tagContainer);
   primaryContent.appendChild(scoreNote);
 
-  /* --- Resilience block --- */
+  /* Resilience block */
   const resContent = document.getElementById('resilience-content');
   resContent.innerHTML = '';
   const resContainer = document.createElement('div');
@@ -355,7 +350,7 @@ function showResults() {
   });
   resContent.appendChild(resContainer);
 
-  /* --- Bar graph --- */
+  /* Bar graph */
   const graph = document.getElementById('bar-graph');
   graph.innerHTML = '';
   const maxScore = 15;
@@ -364,7 +359,6 @@ function showResults() {
     const row = document.createElement('div');
     row.classList.add('bar-row');
 
-    /* Label column */
     const labelWrap = document.createElement('div');
     labelWrap.classList.add('bar-label-wrap');
 
@@ -373,7 +367,6 @@ function showResults() {
     label.textContent = item.label;
     labelWrap.appendChild(label);
 
-    /* Mark the top bar as Primary */
     if (idx === 0) {
       const primaryBadge = document.createElement('span');
       primaryBadge.classList.add('bar-primary-badge');
@@ -398,25 +391,22 @@ function showResults() {
     row.appendChild(scoreEl);
     graph.appendChild(row);
 
-    /* Animate bar after paint */
     setTimeout(function () {
       fill.style.width = ((item.score / maxScore) * 100) + '%';
     }, 80);
   });
 
-  /* --- Mirror paragraph (after bar graph, before CTA) --- */
+  /* Mirror paragraph */
   const mirrorEl = document.getElementById('mirror-paragraph');
   if (mirrorEl) {
     const primary = primaries[0];
     const meta = categoryMeta[primary.category];
     let mirrorText = '';
-    if (meta) {
-      if (primaries.length === 1) {
-        mirrorText = 'Your highest score is ' + primary.fullLabel + '. When this is your primary pattern, ' + meta.zoomInTrap.charAt(0).toLowerCase() + meta.zoomInTrap.slice(1) + ' This may be how your nervous system is wired, or it may be where you are right now. Either way, seeing it clearly is the first step to working with it instead of being pulled by it.';
-      } else {
-        const names = primaries.map(function(p) { return p.fullLabel; }).join(' and ');
-        mirrorText = 'Your highest scores are tied across ' + names + '. These are the areas where your nervous system is working hardest right now. This may be how you are wired, or it may reflect where you are in this season. Either way, seeing it clearly is the first step to working with it instead of being pulled by it.';
-      }
+    if (primaries.length === 1 && meta && meta.mirror) {
+      mirrorText = meta.mirror;
+    } else {
+      const names = primaries.map(function (p) { return p.fullLabel; }).join(' and ');
+      mirrorText = 'Your highest scores are tied across ' + names + '. These are the areas where your patterns are most active right now. This may be how you are wired, or it may reflect where you are in this season. Your interpretation will show you exactly how these patterns are operating in your life and how to use them to your advantage.';
     }
     mirrorEl.textContent = mirrorText;
   }
@@ -428,7 +418,6 @@ function showResults() {
 document.addEventListener('DOMContentLoaded', function () {
   buildDepletionScale();
 
-  /* Next button */
   nextBtn.addEventListener('click', function () {
     const index = state.currentIndex;
     const isLast = (index === state.responses.length - 1);
@@ -440,7 +429,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  /* Back button */
   backBtn.addEventListener('click', function () {
     if (state.currentIndex > 0) {
       state.currentIndex--;
@@ -448,14 +436,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  /* Start button */
   startBtn.addEventListener('click', function () {
     landingPage.classList.add('hidden');
     quizPage.classList.remove('hidden');
     initQuiz();
   });
 
-  /* Retake button */
   const retakeBtn = document.getElementById('retake-btn');
   if (retakeBtn) {
     retakeBtn.addEventListener('click', function () {
@@ -475,6 +461,7 @@ document.addEventListener('DOMContentLoaded', function () {
       depEl.textContent = '';
       depEl.classList.remove('high-depletion');
       document.getElementById('results-title').textContent = 'Your Results';
+      document.getElementById('mirror-paragraph').textContent = '';
 
       startBtn.disabled = true;
       startNote.style.display = '';
@@ -486,7 +473,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* Stripe placeholder */
   const stripeBtn = document.getElementById('stripe-btn');
   if (stripeBtn) {
     stripeBtn.addEventListener('click', function () {
