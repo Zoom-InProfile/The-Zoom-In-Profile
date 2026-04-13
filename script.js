@@ -420,13 +420,21 @@ function showResults() {
     const primary = primaries[0];
     const meta = categoryMeta[primary.category];
     let mirrorText = '';
-    if (meta) {
-      if (primaries.length === 1) {
-        mirrorText = 'Your highest score is ' + primary.fullLabel + '. When this is your primary pattern, ' + meta.zoomInTrap.charAt(0).toLowerCase() + meta.zoomInTrap.slice(1) + ' This may be how your nervous system is wired, or it may be where you are right now. Either way, seeing it clearly is the first step to working with it instead of being pulled by it.';
-      } else {
-        const names = primaries.map(function(p) { return p.fullLabel; }).join(' and ');
-        mirrorText = 'Your highest scores are tied across ' + names + '. These are the areas where your nervous system is working hardest right now. This may be how you are wired, or it may reflect where you are in this season. Either way, seeing it clearly is the first step to working with it instead of being pulled by it.';
-      }
+    if (primaries.length === 1 && meta && meta.mirror) {
+      mirrorText = meta.mirror;
+    } else {
+      const names = primaries.map(function (p) { return p.fullLabel; }).join(' and ');
+      const sensitivityParts = primaries.map(function (p) {
+        const m = categoryMeta[p.category];
+        return m ? m.sensitivityPhrase : p.fullLabel;
+      });
+      const strengthParts = primaries.map(function (p) {
+        const m = categoryMeta[p.category];
+        return m ? m.strengthPhrase : '';
+      }).filter(Boolean);
+      const sensitivityText = sensitivityParts.join(', and ');
+      const strengthText = strengthParts.join(', and ');
+      mirrorText = 'Your highest scores are tied across ' + names + '. When both are active, ' + sensitivityText + ' can land at the same time — and that combination can make it hard to find solid ground when both are pulling at once. ' + strengthText.charAt(0).toUpperCase() + strengthText.slice(1) + '. That is not a small thing. This may be how you are wired, or it may reflect where you are right now. Your interpretation will show you how these patterns operate across different categories in your life and how to use them to your advantage.';
     }
     mirrorEl.textContent = mirrorText;
   }
