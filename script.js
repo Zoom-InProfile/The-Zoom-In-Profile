@@ -484,7 +484,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const stripeBtn = document.getElementById('stripe-btn');
   if (stripeBtn) {
     stripeBtn.addEventListener('click', function () {
-      alert('Payment coming soon. Please email robin@happierhour.com with a screenshot of your results to get started.');
+      window.open('https://buy.stripe.com/bJe7sMaLH3yg0fs9Po9ws00', '_blank');
+    });
+  }
+
+  const coupleBtn = document.getElementById('couple-btn');
+  if (coupleBtn) {
+    coupleBtn.addEventListener('click', function () {
+      window.open('https://buy.stripe.com/aFaeVe1b7d8Qd2e8Lk9ws01', '_blank');
     });
   }
 });
