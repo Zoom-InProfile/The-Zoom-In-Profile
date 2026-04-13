@@ -195,56 +195,65 @@ const categoryMeta = {
   somatic: {
     label: 'Somatic',
     fullLabel: 'Somatically Sensitive',
-    resilienceLabel: 'Somatically Resilient',
-    mirror: 'Your highest score is in the Somatic area. When this is your primary pattern, physical sensation becomes the loudest signal in the room — and that same attunement is what makes you unusually aware of what your body needs before others even notice something is off. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
+    sensitivityPhrase: 'physical sensation becomes the loudest signal in the room',
+    strengthPhrase: 'that same attunement makes you unusually aware of what your body needs before others even notice something is off',
+    mirror: 'Your highest score is in the Somatic area. When this is your primary pattern, physical sensation becomes the loudest signal in the room — and that same attunement is what makes you unusually aware of what your body needs before others even notice something is off. That is not a small thing. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
   },
   self: {
     label: 'Self',
     fullLabel: 'Self-Judgment Sensitive',
-    resilienceLabel: 'Self-Resilient',
-    mirror: 'Your highest score is in Self-Judgment. When this is your primary pattern, a single mistake can feel like evidence of something larger — and that same inner voice is what drives the high standards and self-awareness that make you good at what you do. This may be a long-standing pattern, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
+    sensitivityPhrase: 'a single mistake can feel like evidence of something larger',
+    strengthPhrase: 'that same inner voice is what drives the high standards and self-awareness that make you good at what you do',
+    mirror: 'Your highest score is in Self-Judgment. When this is your primary pattern, a single mistake can feel like evidence of something larger — and that same inner voice is what drives the high standards and self-awareness that make you good at what you do. That is not a small thing. This may be a long-standing pattern, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
   },
   approval: {
     label: 'Approval',
     fullLabel: 'Approval-Sensitive',
-    resilienceLabel: 'Approval-Resilient',
-    mirror: "Your highest score is in Approval. When this is your primary pattern, how others see you carries more weight than you'd like — and that same attunement is what makes you perceptive, socially intelligent, and skilled at reading a room. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage."
+    sensitivityPhrase: 'how others see you carries more weight than you would like',
+    strengthPhrase: 'that same attunement makes you perceptive, socially intelligent, and skilled at reading a room',
+    mirror: "Your highest score is in Approval. When this is your primary pattern, how others see you carries more weight than you'd like — and that same attunement is what makes you perceptive, socially intelligent, and skilled at reading a room. That is not a small thing. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage."
   },
   connection: {
     label: 'Connection',
     fullLabel: 'Connection-Sensitive',
-    resilienceLabel: 'Connection-Resilient',
-    mirror: 'Your highest score is in Connection. When this is your primary pattern, subtle distance in a relationship can feel like disconnection even when the evidence does not support it — and that same sensitivity is what makes you one of the most attuned and relationally present people in any room. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
+    sensitivityPhrase: 'perceived distance in a relationship can feel like disconnection even when the evidence does not support it',
+    strengthPhrase: 'that same sensitivity makes you one of the most attuned and relationally present people in any room',
+    mirror: 'Your highest score is in Connection. When this is your primary pattern, perceived distance in a relationship can feel like disconnection even when the evidence does not support it — and that same sensitivity is what makes you one of the most attuned and relationally present people in any room. That is not a small thing. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
   },
   attachment: {
     label: 'Attachment',
     fullLabel: 'Attachment-Sensitive',
-    resilienceLabel: 'Attachment-Resilient',
-    mirror: 'Your highest score is in Attachment. When this is your primary pattern, the people you love feel like they are partly inside you — their pain lands as your own, and that same depth of care is what makes you an extraordinary source of support for the people in your life. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
+    sensitivityPhrase: 'the people you love feel like they are partly inside you and their pain lands as your own',
+    strengthPhrase: 'that same depth of care makes you an extraordinary source of support for the people in your life',
+    mirror: 'Your highest score is in Attachment. When this is your primary pattern, the people you love feel like they are partly inside you — their pain lands as your own, and that same depth of care is what makes you an extraordinary source of support for the people in your life. That is not a small thing. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
   },
   capacity: {
     label: 'Capacity',
     fullLabel: 'Capacity-Sensitive',
-    resilienceLabel: 'Capacity-Resilient',
-    mirror: 'Your highest score is in Capacity. When this is your primary pattern, demand starts to feel like threat — and that same sensitivity is what keeps you honest about your limits and protective of what actually matters to you. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
+    sensitivityPhrase: 'demand starts to feel like threat and everything can feel urgent at once',
+    strengthPhrase: 'that same sensitivity keeps you honest about your limits and protective of what actually matters to you',
+    mirror: 'Your highest score is in Capacity. When this is your primary pattern, demand starts to feel like threat — and that same sensitivity is what keeps you honest about your limits and protective of what actually matters to you. That is not a small thing. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
   },
   change: {
     label: 'Change',
     fullLabel: 'Change-Sensitive',
-    resilienceLabel: 'Change-Resilient',
-    mirror: 'Your highest score is in Change. When this is your primary pattern, transition — even wanted transition — can feel disorienting before it feels freeing — and that same sensitivity is what keeps you deeply connected to meaning, continuity, and the things that matter most to you. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
+    sensitivityPhrase: 'transition can feel disorienting before it feels freeing',
+    strengthPhrase: 'that same sensitivity keeps you deeply connected to meaning, continuity, and the things that matter most to you',
+    mirror: 'Your highest score is in Change. When this is your primary pattern, transition — even wanted transition — can feel disorienting before it feels freeing — and that same sensitivity is what keeps you deeply connected to meaning, continuity, and the things that matter most to you. That is not a small thing. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
   },
   humanity: {
     label: 'Humanity',
     fullLabel: 'Globally Sensitive',
-    resilienceLabel: 'Humanity-Resilient',
-    mirror: 'Your highest score is in the Humanity area. When this is your primary pattern, the weight of what is happening in the world lands personally — and that same permeability is what makes you someone who genuinely feels the stakes and shows up with real care for people and for what is right. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
+    sensitivityPhrase: 'the weight of what is happening in the world lands personally',
+    strengthPhrase: 'that same permeability makes you someone who genuinely feels the stakes and shows up with real care for people and for what is right',
+    mirror: 'Your highest score is in the Humanity area. When this is your primary pattern, the weight of what is happening in the world lands personally — and that same permeability is what makes you someone who genuinely feels the stakes and shows up with real care for people and for what is right. That is not a small thing. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
   },
   uncertainty: {
     label: 'Uncertainty',
     fullLabel: 'Uncertainty-Sensitive',
-    resilienceLabel: 'Uncertainty-Resilient',
-    mirror: 'Your highest score is in Uncertainty. When this is your primary pattern, not-knowing feels genuinely uncomfortable and your mind moves quickly to fill that gap — and that same sensitivity is what makes you a careful thinker who anticipates what others miss. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you exactly how this pattern is operating in your life and how to use it to your advantage.'
+    sensitivityPhrase: 'not-knowing feels genuinely uncomfortable and your mind moves quickly to fill that gap',
+    strengthPhrase: 'that same sensitivity makes you a careful thinker who anticipates what others miss',
+    mirror: 'Your highest score is in Uncertainty. When this is your primary pattern, not-knowing feels genuinely uncomfortable and your mind moves quickly to fill that gap — and that same sensitivity is what makes you a careful thinker who anticipates what others miss. That is not a small thing. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
   }
 };
 
@@ -267,15 +276,17 @@ function depletionNote(score) {
   }
 }
 
-/* Tally scores by category */
+/* Tally scores by category using the shuffled orderedQuestions */
 function calculateScores() {
   const totals = {};
+
   state.orderedQuestions.forEach(function (q, i) {
     const cat = q.category;
     if (!(cat in totals)) totals[cat] = 0;
     const response = state.responses[i];
     if (response !== null) totals[cat] += response;
   });
+
   return totals;
 }
 
@@ -289,6 +300,7 @@ function showResults() {
 
   const totals = calculateScores();
 
+  /* Build sorted array high to low */
   const sorted = Object.keys(totals).map(function (cat) {
     const score = totals[cat];
     const tier  = getTier(score);
@@ -296,28 +308,30 @@ function showResults() {
     return { category: cat, score: score, tier: tier, label: meta.label, fullLabel: meta.fullLabel };
   }).sort(function (a, b) { return b.score - a.score; });
 
+  /* Primary: highest score — all ties are co-Primaries */
   const highScore = sorted[0].score;
   const primaries = sorted.filter(function (c) { return c.score === highScore; });
 
+  /* Resilience Areas: lowest 3 scores */
   const byScoreAsc = sorted.slice().sort(function (a, b) { return a.score - b.score; });
   const resilience = byScoreAsc.slice(0, 3);
 
-  /* Results title */
+  /* --- Results title --- */
   if (primaries.length === 1) {
     document.getElementById('results-title').textContent =
-      'Your Primary Stress Type: ' + primaries[0].fullLabel;
+      'Your primary stress type: ' + primaries[0].fullLabel;
   } else {
     const names = primaries.map(function (p) { return p.fullLabel; }).join(' and ');
     document.getElementById('results-title').textContent =
-      'Your Primary Stress Types: ' + names;
+      'Your primary stress types: ' + names;
   }
 
-  /* Depletion context */
+  /* --- Depletion context note --- */
   const depEl = document.getElementById('depletion-context');
   depEl.textContent = depletionNote(state.depletionScore);
   if (state.depletionScore >= 7) depEl.classList.add('high-depletion');
 
-  /* Primary block */
+  /* --- Primary block --- */
   const primaryContent = document.getElementById('primary-content');
   primaryContent.innerHTML = '';
   const tagContainer = document.createElement('div');
@@ -336,7 +350,7 @@ function showResults() {
   primaryContent.appendChild(tagContainer);
   primaryContent.appendChild(scoreNote);
 
-  /* Resilience block */
+  /* --- Resilience block --- */
   const resContent = document.getElementById('resilience-content');
   resContent.innerHTML = '';
   const resContainer = document.createElement('div');
@@ -345,12 +359,12 @@ function showResults() {
     const tag = document.createElement('span');
     tag.classList.add('resilience-tag');
     const meta = categoryMeta[r.category];
-    tag.textContent = meta && meta.resilienceLabel ? meta.resilienceLabel : r.fullLabel;
+    tag.textContent = meta ? meta.label : r.label;
     resContainer.appendChild(tag);
   });
   resContent.appendChild(resContainer);
 
-  /* Bar graph */
+  /* --- Bar graph --- */
   const graph = document.getElementById('bar-graph');
   graph.innerHTML = '';
   const maxScore = 15;
@@ -359,6 +373,7 @@ function showResults() {
     const row = document.createElement('div');
     row.classList.add('bar-row');
 
+    /* Label column */
     const labelWrap = document.createElement('div');
     labelWrap.classList.add('bar-label-wrap');
 
@@ -367,7 +382,9 @@ function showResults() {
     label.textContent = item.label;
     labelWrap.appendChild(label);
 
-    if (idx === 0) {
+    /* Mark all tied primaries */
+    const isPrimary = primaries.some(function(p) { return p.category === item.category; });
+    if (isPrimary) {
       const primaryBadge = document.createElement('span');
       primaryBadge.classList.add('bar-primary-badge');
       primaryBadge.textContent = 'Primary';
@@ -391,22 +408,25 @@ function showResults() {
     row.appendChild(scoreEl);
     graph.appendChild(row);
 
+    /* Animate bar after paint */
     setTimeout(function () {
       fill.style.width = ((item.score / maxScore) * 100) + '%';
     }, 80);
   });
 
-  /* Mirror paragraph */
+  /* --- Mirror paragraph (after bar graph, before CTA) --- */
   const mirrorEl = document.getElementById('mirror-paragraph');
   if (mirrorEl) {
     const primary = primaries[0];
     const meta = categoryMeta[primary.category];
     let mirrorText = '';
-    if (primaries.length === 1 && meta && meta.mirror) {
-      mirrorText = meta.mirror;
-    } else {
-      const names = primaries.map(function (p) { return p.fullLabel; }).join(' and ');
-      mirrorText = 'Your highest scores are tied across ' + names + '. These are the areas where your patterns are most active right now. This may be how you are wired, or it may reflect where you are in this season. Your interpretation will show you exactly how these patterns are operating in your life and how to use them to your advantage.';
+    if (meta) {
+      if (primaries.length === 1) {
+        mirrorText = 'Your highest score is ' + primary.fullLabel + '. When this is your primary pattern, ' + meta.zoomInTrap.charAt(0).toLowerCase() + meta.zoomInTrap.slice(1) + ' This may be how your nervous system is wired, or it may be where you are right now. Either way, seeing it clearly is the first step to working with it instead of being pulled by it.';
+      } else {
+        const names = primaries.map(function(p) { return p.fullLabel; }).join(' and ');
+        mirrorText = 'Your highest scores are tied across ' + names + '. These are the areas where your nervous system is working hardest right now. This may be how you are wired, or it may reflect where you are in this season. Either way, seeing it clearly is the first step to working with it instead of being pulled by it.';
+      }
     }
     mirrorEl.textContent = mirrorText;
   }
@@ -418,6 +438,7 @@ function showResults() {
 document.addEventListener('DOMContentLoaded', function () {
   buildDepletionScale();
 
+  /* Next button */
   nextBtn.addEventListener('click', function () {
     const index = state.currentIndex;
     const isLast = (index === state.responses.length - 1);
@@ -429,6 +450,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  /* Back button */
   backBtn.addEventListener('click', function () {
     if (state.currentIndex > 0) {
       state.currentIndex--;
@@ -436,12 +458,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  /* Start button */
   startBtn.addEventListener('click', function () {
     landingPage.classList.add('hidden');
     quizPage.classList.remove('hidden');
     initQuiz();
   });
 
+  /* Retake button */
   const retakeBtn = document.getElementById('retake-btn');
   if (retakeBtn) {
     retakeBtn.addEventListener('click', function () {
@@ -461,7 +485,6 @@ document.addEventListener('DOMContentLoaded', function () {
       depEl.textContent = '';
       depEl.classList.remove('high-depletion');
       document.getElementById('results-title').textContent = 'Your Results';
-      document.getElementById('mirror-paragraph').textContent = '';
 
       startBtn.disabled = true;
       startNote.style.display = '';
@@ -473,6 +496,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* Stripe placeholder */
   const stripeBtn = document.getElementById('stripe-btn');
   if (stripeBtn) {
     stripeBtn.addEventListener('click', function () {
