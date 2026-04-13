@@ -117,7 +117,7 @@ function renderQuestion() {
   };
   const categoryDisplay = categoryLabels[currentQuestion.category] || currentQuestion.category;
   questionCategory.textContent = categoryDisplay;
-  questionText.textContent = currentQuestion.question || '';
+  questionText.textContent = (currentQuestion.type === 'scenario' ? 'Imagine: ' : '') + (currentQuestion.question || '');
   const percent = ((index + 1) / total) * 100;
   progressFill.style.width = percent + '%';
   progressLabel.textContent = 'Question ' + (index + 1) + ' of ' + total;
