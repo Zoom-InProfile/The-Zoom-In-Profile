@@ -319,11 +319,11 @@ function showResults() {
   /* --- Results title --- */
   if (primaries.length === 1) {
     document.getElementById('results-title').textContent =
-      'Your primary stress type: ' + primaries[0].fullLabel;
+      'Your Primary Stress Type: ' + primaries[0].fullLabel;
   } else {
     const names = primaries.map(function (p) { return p.fullLabel; }).join(' and ');
     document.getElementById('results-title').textContent =
-      'Your primary stress types: ' + names;
+      'Your Primary Stress Types: ' + names;
   }
 
   /* --- Depletion context note --- */
