@@ -108,7 +108,7 @@ function renderQuestion() {
     self: 'Self-Relationship',
     approval: 'Approval',
     connection: 'Connection',
-    attachment: 'Attachment',
+    influence: 'Influence',
     capacity: 'Capacity',
     change: 'Change',
     humanity: 'Humanity',
@@ -213,13 +213,13 @@ const categoryMeta = {
     tiedBody: 'When Connection is one of your primary patterns, perceived distance in a relationship can feel like disconnection even when the evidence does not support it — and that same sensitivity is what makes you one of the most attuned and relationally present people in any room.',
     mirror: 'Your highest score is in Connection. When this is your primary pattern, perceived distance in a relationship can feel like disconnection even when the evidence does not support it — and that same sensitivity is what makes you one of the most attuned and relationally present people in any room. That is not a small thing. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
   },
-  attachment: {
-    label: 'Attachment',
-    fullLabel: 'Attachment-Sensitive',
-    tiedName: 'Attachment',
-    validationLine: 'Loving that deeply leaves a mark — on them and on you.',
-    tiedBody: 'When Attachment is one of your primary patterns, the people you love feel like they are partly inside you — their pain lands as your own, and that same depth of care is what makes you an extraordinary source of support for the people in your life.',
-    mirror: 'Your highest score is in Attachment. When this is your primary pattern, the people you love feel like they are partly inside you — their pain lands as your own, and that same depth of care is what makes you an extraordinary source of support for the people in your life. Loving that deeply leaves a mark — on them and on you. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
+  influence: {
+    label: 'Influence',
+    fullLabel: 'Influence-Sensitive',
+    tiedName: 'Influence',
+    validationLine: 'Seeing what needs to happen is a form of intelligence, not a burden to carry alone.',
+    tiedBody: 'When Influence is one of your primary patterns, the gap between what you can see clearly and what you can actually make happen becomes its own source of suffering — and that same clarity is what makes you someone who spots what others miss and shows up with genuine commitment to the people you care about.',
+    mirror: 'Your highest score is in Influence. When this is your primary pattern, the gap between what you can see clearly and what you can actually make happen becomes its own source of suffering — and that same clarity is what makes you someone who spots what others miss and shows up with genuine commitment to the people you care about. Seeing what needs to happen is a form of intelligence, not a burden to carry alone. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
   },
   capacity: {
     label: 'Capacity',
