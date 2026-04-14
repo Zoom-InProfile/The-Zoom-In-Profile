@@ -124,12 +124,16 @@ function renderQuestion() {
   answerGrid.innerHTML = '';
   /* Shuffle answers so score-0 is not always first */
   var shuffledAnswers = currentQuestion.answers.slice();
-  for (var i = shuffledAnswers.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = shuffledAnswers[i];
-    shuffledAnswers[i] = shuffledAnswers[j];
-    shuffledAnswers[j] = temp;
+  if (currentQuestion.type === 'scenario') {
+    for (var i = shuffledAnswers.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = shuffledAnswers[i];
+      shuffledAnswers[i] = shuffledAnswers[j];
+      shuffledAnswers[j] = temp;
+    }
   }
+
+  shuffledAnswers.forEach(function (option) {
 
   shuffledAnswers.forEach(function (option) {
     const btn = document.createElement('button');
