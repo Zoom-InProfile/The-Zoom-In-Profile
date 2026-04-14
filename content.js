@@ -349,7 +349,7 @@ const questions = [
   id: "capacity_3",
   category: "capacity",
   type: "vulnerability",
-  question: "I tend to feel like I have little left to give.",
+  question: "Even on lighter days, I tend to feel like I have little left to give.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
