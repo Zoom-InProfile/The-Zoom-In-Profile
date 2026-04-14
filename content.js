@@ -19,7 +19,7 @@ const questions = [
     id: "somatic_2",
     category: "somatic",
     type: "scenario",
-    question: "Under stress, your body starts signaling tension or fatigue. You notice:",
+    question: "You are under a lot of stress and your body starts signaling tension or fatigue. You notice:",
     answers: [
       { text: "You recognize the signals early and respond in ways that help regulate your system", score: 0 },
       { text: "You feel the tension but continue functioning and address it when you can", score: 1 },
