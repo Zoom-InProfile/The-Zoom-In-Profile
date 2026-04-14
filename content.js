@@ -337,7 +337,7 @@ const questions = [
   id: "capacity_2",
   category: "capacity",
   type: "scenario",
-  question: "When your plate feels full and someone asks you to take on something more, you notice:",
+  question: "Your plate feels completely full and someone asks you to take on something more, you notice:",
   answers: [
     { text: "You assess it and either take it on or say no without much strain", score: 0 },
     { text: "You feel the pressure, but are able to think it through before responding", score: 1 },
