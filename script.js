@@ -132,9 +132,6 @@ function renderQuestion() {
       shuffledAnswers[j] = temp;
     }
   }
-
-  shuffledAnswers.forEach(function (option) {
-
   shuffledAnswers.forEach(function (option) {
     const btn = document.createElement('button');
     btn.textContent = option.text;
