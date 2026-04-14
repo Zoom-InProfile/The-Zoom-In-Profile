@@ -256,37 +256,37 @@ const questions = [
 },
 
 // -------------------------
-// ATTACHMENT
+// INFLUENCE
 // -------------------------
 {
-  id: "attachment_1",
-  category: "attachment",
+  id: "influence_1",
+  category: "influence",
   type: "scenario",
-  question: "Someone you love is struggling, and there’s nothing you can do to fix it. You notice:",
+  question: "Imagine: Someone you love is making a choice you believe will hurt them, and they aren't listening. You notice:",
   answers: [
-    { text: "You feel deeply for them and maintain your own daily life", score: 0 },
-    { text: "Their pain stays with you, but you don't lose yourself in it", score: 1 },
-    { text: "You start to take on their distress and it becomes hard to feel okay yourself", score: 2 },
-    { text: "You can't separate their pain from your own and your well-being depends on theirs", score: 3 }
+    { text: "You share your perspective and accept that the choice is theirs", score: 0 },
+    { text: "You feel concerned but can accept their choice even though you disagree", score: 1 },
+    { text: "You keep looking for a way to get through to them", score: 2 },
+    { text: "You feel the weight of your powerlessness in your body and can't stop looking for solutions", score: 3 }
   ]
 },
 {
-  id: "attachment_2",
-  category: "attachment",
+  id: "influence_2",
+  category: "influence",
   type: "scenario",
-  question: "You are supporting someone you love over an extended period, and their needs don’t let up. You notice:",
+  question: "Imagine: You clearly see how a situation you care about could go better, but the decision isn't yours to make. You notice:",
   answers: [
-    { text: "You’re there for them, but your life stays intact", score: 0 },
-    { text: "You feel the weight of it all, but are able to take care of yourself as well", score: 1 },
-    { text: "You feel responsible for holding everything together and start to lose your footing", score: 2 },
-    { text: "It feels like they are all your responsibility, and you can’t step back", score: 3 }
+    { text: "You offer your input and let the outcome unfold", score: 0 },
+    { text: "You feel some frustration but can move on once you've spoken", score: 1 },
+    { text: "You keep thinking about it, wishing you could do more", score: 2 },
+    { text: "You feel a sharp frustration or dread, and continue looking for any angle that might change the outcome", score: 3 }
   ]
 },
 {
-  id: "attachment_3",
-  category: "attachment",
+  id: "influence_3",
+  category: "influence",
   type: "vulnerability",
-  question: "I tend to prioritize my loved ones’ needs over my own.",
+  question: "Watching a clear solution be ignored in something I care about bothers me more than it probably should.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -295,10 +295,10 @@ const questions = [
   ]
 },
 {
-  id: "attachment_4",
-  category: "attachment",
+  id: "influence_4",
+  category: "influence",
   type: "vulnerability",
-  question: "I feel responsible for my loved ones’ well-being, even when it isn’t mine to carry.",
+  question: "When someone I love is moving slowly and we are already running late, I find myself losing my temper or withdrawing into worry.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -307,10 +307,10 @@ const questions = [
   ]
 },
 {
-  id: "attachment_5",
-  category: "attachment",
+  id: "influence_5",
+  category: "influence",
   type: "resilience",
-  question: "I care deeply about the people in my life without taking their pain on as my own.",
+  question: "When someone I love won't take my advice, I say my piece and let it go.",
   answers: [
     { text: "Almost always", score: 0 },
     { text: "Often", score: 1 },
@@ -318,7 +318,6 @@ const questions = [
     { text: "Never or rarely", score: 3 }
   ]
 },
-
 // -------------------------
 // CAPACITY
 // -------------------------
