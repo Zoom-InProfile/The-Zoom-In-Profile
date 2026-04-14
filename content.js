@@ -262,7 +262,7 @@ const questions = [
   id: "influence_1",
   category: "influence",
   type: "scenario",
-  question: "Imagine: Someone you love is making a choice you believe will hurt them, and they aren't listening. You notice:",
+  question: "Someone you love is making a choice you believe will hurt them, and they aren't listening. You notice:",
   answers: [
     { text: "You share your perspective and accept that the choice is theirs", score: 0 },
     { text: "You feel concerned but can accept their choice even though you disagree", score: 1 },
@@ -274,7 +274,7 @@ const questions = [
   id: "influence_2",
   category: "influence",
   type: "scenario",
-  question: "Imagine: You clearly see how a situation you care about could go better, but the decision isn't yours to make. You notice:",
+  question: "You clearly see how a situation you care about could go better, but the decision isn't yours to make. You notice:",
   answers: [
     { text: "You offer your input and let the outcome unfold", score: 0 },
     { text: "You feel some frustration but can move on once you've spoken", score: 1 },
@@ -286,7 +286,7 @@ const questions = [
   id: "influence_3",
   category: "influence",
   type: "vulnerability",
-  question: "Watching a clear solution be ignored in something I care about bothers me more than it probably should.",
+  question: "Watching an obvious solution be ignored in something I care about really bothers me.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -298,7 +298,7 @@ const questions = [
   id: "influence_4",
   category: "influence",
   type: "vulnerability",
-  question: "When someone I love is moving slowly and we are already running late, I find myself losing my temper or withdrawing into worry.",
+  question: "If I witness someone I love moving slowly, while running late, I find myself losing my patience or withdrawing into worry.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -310,7 +310,7 @@ const questions = [
   id: "influence_5",
   category: "influence",
   type: "resilience",
-  question: "When someone I love won't take my advice, I say my piece and let it go.",
+  question: "When someone I love won't take my advice, I give them my perspective and let it go.",
   answers: [
     { text: "Almost always", score: 0 },
     { text: "Often", score: 1 },
@@ -325,11 +325,11 @@ const questions = [
   id: "capacity_1",
   category: "capacity",
   type: "scenario",
-  question: "You’re in a stretch where the demands on you don’t let up — work, family, obligations. You notice:",
+  question: "You’re in a stretch where the demands on you don’t let up. You notice:",
   answers: [
-    { text: "You feel steady and able to stay focused on what matters", score: 0 },
+    { text: "You feel calm and able to stay focused on what matters", score: 0 },
     { text: "You feel pressure building, but can still stay on top of things", score: 1 },
-    { text: "You feel stretched and mentally scattered, like it’s getting harder to keep up", score: 2 },
+    { text: "You feel stretched and scattered, like it’s getting harder to keep up", score: 2 },
     { text: "You feel overwhelmed and like everything is starting to fall apart", score: 3 }
   ]
 },
@@ -337,7 +337,7 @@ const questions = [
   id: "capacity_2",
   category: "capacity",
   type: "scenario",
-  question: "When your plate already feels full and someone asks you to take on something more, you notice:",
+  question: "When your plate feels full and someone asks you to take on something more, you notice:",
   answers: [
     { text: "You assess it and either take it on or say no without much strain", score: 0 },
     { text: "You feel the pressure, but are able to think it through before responding", score: 1 },
@@ -349,7 +349,7 @@ const questions = [
   id: "capacity_3",
   category: "capacity",
   type: "vulnerability",
-  question: "Even when my schedule is light, I feel like I have little left to give.",
+  question: "I tend to feel like I have little left to give.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -388,7 +388,7 @@ const questions = [
     id: "change_1",
     category: "change",
     type: "scenario",
-    question: "You experience a major change that you weren't prepared for and didn't see coming. You notice:",
+    question: "You experience a major change you didn't see coming. You notice:",
     answers: [
       { text: "You find your footing quickly and stay open to the possibilities ahead", score: 0 },
       { text: "You feel unsettled and disoriented, but you adjust and begin to open up to what's next", score: 1 },
@@ -400,7 +400,7 @@ const questions = [
     id: "change_2",
     category: "change",
     type: "scenario",
-    question: "You made a change that you wanted, and it's been harder than you anticipated. You notice:",
+    question: "You decided to make a big change, and it's been harder than you anticipated. You notice:",
     answers: [
       { text: "You adjust to the disruption and find your footing without losing confidence in your decision", score: 0 },
       { text: "You feel unsettled by the challenges, but you trust your decision and stay open", score: 1 },
@@ -412,7 +412,7 @@ const questions = [
     id: "change_3",
     category: "change",
     type: "vulnerability",
-    question: "I find myself dreading upcoming changes even when I know they might be good for me.",
+    question: "I dread upcoming changes even when I know they might be good for me.",
     answers: [
       { text: "Never or rarely", score: 0 },
       { text: "Sometimes", score: 1 },
@@ -424,7 +424,7 @@ const questions = [
     id: "change_4",
     category: "change",
     type: "resilience",
-    question: "When things change, I stay open to what's coming rather than dwelling on what I lost.",
+    question: "When things change, I stay open to what's ahead rather than dwelling on what I lost.",
     answers: [
       { text: "Almost always", score: 0 },
       { text: "Often", score: 1 },
@@ -452,7 +452,7 @@ const questions = [
     id: "global_1",
     category: "humanity",
     type: "scenario",
-    question: "The news has been relentless for weeks, conflict, injustice, things that feel unfixable. You notice:",
+    question: "The news has been upsetting and relentless for weeks. You notice:",
     answers: [
       { text: "You stay informed without over-consuming and don't get pulled under by it", score: 0 },
       { text: "You feel a low hum of collective sadness in the background, but it doesn't follow you into your day", score: 1 },
@@ -464,7 +464,7 @@ const questions = [
     id: "global_2",
     category: "humanity",
     type: "scenario",
-    question: "You witness or learn about something that deeply violates your sense of what is right, in an institution, a community, or the world. You notice:",
+    question: "You witness something that deeply violates your sense of what is right, in an institution, a community, or the world. You notice:",
     answers: [
       { text: "You feel genuinely upset without taking the pain on as your own", score: 0 },
       { text: "You feel disturbed and sit with it for a while, but find your way back to yourself without too much difficulty", score: 1 },
@@ -552,7 +552,7 @@ const questions = [
     id: "uncertainty_4",
     category: "uncertainty",
     type: "vulnerability",
-    question: "Uncertainty or threats send me looking for information about what could go wrong.",
+    question: "When something important is uncertain or at stake, I find myself searching for information about what could go wrong.",
     answers: [
       { text: "Never or rarely", score: 0 },
       { text: "Sometimes", score: 1 },
