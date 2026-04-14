@@ -7,7 +7,7 @@ const questions = [
     id: "somatic_1",
     category: "somatic",
     type: "scenario",
-    question: "You’re dealing with ongoing physical discomfort that isn’t going away. On a demanding day, you notice:",
+    question: "You’re dealing with ongoing physical discomfort. On a demanding day, you notice:",
     answers: [
       { text: "You acknowledge the discomfort, adjust your expectations, and move through the day without it taking over", score: 0 },
       { text: "You feel the strain and are less patient or present, but you stay engaged", score: 1 },
@@ -74,7 +74,7 @@ const questions = [
     question: "You made a visible mistake in front of people whose opinion matters. You notice:",
     answers: [
       { text: "You note what to do differently and move on", score: 0 },
-      { text: "You feel embarrassed but can talk yourself down within a few hours", score: 1 },
+      { text: "You feel embarrassed but can talk yourself down pretty quickly", score: 1 },
       { text: "Your inner critic is loud and you keep replaying what happened into the night", score: 2 },
       { text: "Your inner critic takes over — you turn against yourself and shut down", score: 3 }
     ]
@@ -147,10 +147,10 @@ const questions = [
     id: "approval_2",
     category: "approval",
     type: "scenario",
-    question: "Someone whose opinion matters gives you critical feedback that doesn’t feel entirely fair. You notice:",
+    question: "Someone whose opinion matters gives you critical feedback that doesn’t feel fair. You notice:",
     answers: [
       { text: "You take what’s useful, set aside the rest, and move on", score: 0 },
-      { text: "You feel stung, but find perspective within a day or so", score: 1 },
+      { text: "You feel stung, but find perspective pretty quickly", score: 1 },
       { text: "You have trouble shaking it and keep wondering if it changed how they see you", score: 2 },
       { text: "You feel it land as confirmation of what you fear they already think", score: 3 }
     ]
@@ -159,9 +159,9 @@ const questions = [
     id: "approval_3",
     category: "approval",
     type: "scenario",
-    question: "Someone close to you strongly disagrees with your choices and makes it clear they don’t approve. You notice:",
+    question: "Someone close to you strongly disagrees with a choice you made. You notice:",
     answers: [
-      { text: "You stay grounded in your position, even if they don’t approve", score: 0 },
+      { text: "You stay grounded in your position, even if they don’t agree", score: 0 },
       { text: "You feel the tension, but can still stay connected to what you believe", score: 1 },
       { text: "You feel pulled by their disapproval and start to get defensive or question yourself", score: 2 },
       { text: "You feel triggered and reactive — it’s hard to think clearly and you snap or shut down", score: 3 }
@@ -210,7 +210,7 @@ const questions = [
   id: "connection_2",
   category: "connection",
   type: "scenario",
-  question: "Someone important to you repeatedly overrides your needs or dismisses your input. Over time you notice:",
+  question: "Someone close to you consistently dismisses your needs or input. Over time you notice:",
   answers: [
     { text: "You see the pattern clearly, speak up, and trust your needs matter in the relationship", score: 0 },
     { text: "You feel frustrated and sometimes resentful, but still believe your needs matter", score: 1 },
@@ -222,7 +222,7 @@ const questions = [
   id: "connection_3",
   category: "connection",
   type: "vulnerability",
-  question: "When I don’t feel loved in an important relationship, I feel anxious and more fragile.",
+  question: "When I don’t feel loved in an important relationship, I feel anxious and fragile.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -234,7 +234,7 @@ const questions = [
   id: "connection_4",
   category: "connection",
   type: "vulnerability",
-  question: "When someone I care about is upset with me, I quickly assume they don’t like me.",
+  question: "When someone I care about is upset with me, I instantly feel unloved.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
