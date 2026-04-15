@@ -19,12 +19,12 @@ const questions = [
     id: "somatic_2",
     category: "somatic",
     type: "scenario",
-    question: "You are under a lot of stress and your body starts signaling tension or fatigue. You notice:",
+    question: "You notice an unfamiliar physical sensation that goes away pretty quickly. You notice:",
     answers: [
-      { text: "You recognize the signals early and respond in ways that help regulate your system", score: 0 },
-      { text: "You feel the tension but continue functioning and address it when you can", score: 1 },
-      { text: "The physical symptoms amplify the stress and it becomes harder to settle your system", score: 2 },
-      { text: "Your body feels like it’s working against you, and everything becomes harder to manage", score: 3 }
+      { text: "You register it and move on", score: 0 },
+      { text: "You feel concerned but once it's gone you forget about it", score: 1 },
+      { text: "It stays in the background of your awareness and is hard to set aside", score: 2 },
+      { text: "Your attention keeps returning to it and it becomes difficult to focus on anything else", score: 3 }
     ]
   },
   {
@@ -43,7 +43,7 @@ const questions = [
     id: "somatic_4",
     category: "somatic",
     type: "resilience",
-    question: "Even when I feel physical discomfort, I keep my usual perspective.",
+    question: "I have a fundamental confidence in my body's ability to take care of itself.",
     answers: [
       { text: "Almost always", score: 0 },
       { text: "Often", score: 1 },
