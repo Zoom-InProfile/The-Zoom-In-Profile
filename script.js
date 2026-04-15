@@ -105,7 +105,7 @@ function renderQuestion() {
   const currentQuestion = state.orderedQuestions[index];
   const categoryLabels = {
     somatic: 'Somatically Sensitive',
-    self: 'Self-Relationship',
+    appraisal: 'Self-Relationship',
     approval: 'Approval',
     connection: 'Connection',
     influence: 'Influence',
@@ -195,7 +195,7 @@ const categoryMeta = {
     tiedName: 'Self-Judgment',
     validationLine: 'That inner voice shaped you as much as it challenges you.',
     tiedBody: 'When Self-Judgment is one of your primary patterns, a single mistake can feel like evidence of something larger — and that same inner voice is what drives the high standards and self-awareness that make you good at what you do.',
-    mirror: 'Your highest score is in Self-Judgment. When this is your primary pattern, a single mistake can feel like evidence of something larger — and that same inner voice is what drives the high standards and self-awareness that make you good at what you do. That inner voice shaped you as much as it challenges you. This may be a long-standing pattern, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
+    mirror: 'mirror: 'Your primary stress pattern is Appraisal-Sensitive. People in the Appraisal category have a highly active evaluative mind, one that processes experiences quickly, notices what went wrong, and holds itself to a standard. That capacity tends to drive real self-awareness and a genuine desire to do better, and it often makes people in this category unusually thoughtful about their own behavior and impact. Under stress that same evaluative process can turn harsh. A mistake or a moment of falling short may not just register as an event, it can begin to be inappropriately labeled as evidence of something larger about who you are. And the internal voice that delivers that verdict can be critical and difficult to argue with from the inside, because the same mind doing the evaluating is also the one being evaluated. What makes this pattern particularly common among high-functioning people is that the critic and the conscience are running on the same engine. That\'s part of why simply being told to be kinder to yourself often doesn\'t land. The self-criticism and the self-awareness aren\'t separate things, they\'re two expressions of the same capacity, and that capacity is also genuinely a strength. The Zoom-Out work for this pattern is about learning to notice when the appraisal has shifted from accurate to harsh, and finding your way back to a clearer and kinder read of what actually happened. Many people in this pattern believe the inner critic is what keeps them sharp, or that they deserve its judgment. Both are worth examining, because the evaluative mind doesn\'t need to be punishing to be effective. You can hold yourself to a high standard and still be on your own side. That combination is not only possible, it tends to work considerably better.'
   },
   approval: {
     label: 'Approval',
