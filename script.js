@@ -187,7 +187,7 @@ const categoryMeta = {
     tiedName: 'Somatic',
     validationLine: 'Your body has been paying attention for a reason.',
     tiedBody: 'When Somatic is one of your primary patterns, physical sensation becomes the loudest signal in the room — and that same attunement is what makes you unusually aware of what your body needs before others even notice something is off.',
-    mirror: 'Your highest score is in the Somatic area. When this is your primary pattern, physical sensation becomes the loudest signal in the room — and that same attunement is what makes you unusually aware of what your body needs before others even notice something is off. Your body has been paying attention for a reason. This may be how your nervous system is wired, or it may reflect where you are right now. Your interpretation will show you how this pattern operates across different categories in your life and how to use it to your advantage.'
+    mirror: 'mirror: 'Your primary stress pattern is Somatic-Sensitive. When this is your primary pattern, your nervous system has a finely tuned awareness of your body, and that attunement is genuinely valuable. Under stress that same awareness can shift from responsive to vigilant, scanning for threat rather than simply listening and responding. This is an intelligent response to real experience rather than a weakness, and the Zoom-Out work for this pattern is about learning to hear your body as a messenger rather than a threat detector.'
   },
   self: {
     label: 'Self',
