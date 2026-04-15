@@ -435,10 +435,12 @@ function showResults() {
   /* Mirror paragraph */
   const mirrorEl = document.getElementById('mirror-paragraph');
   if (mirrorEl) {
-    if (primaries.length === 1) {
-      const meta = categoryMeta[primaries[0].category];
-      mirrorEl.textContent = meta && meta.mirror ? meta.mirror : '';
-    } else {
+   if (primaries.length === 1) {
+  const meta = categoryMeta[primaries[0].category];
+  const mirrorText = meta && meta.mirror ? meta.mirror : '';
+  const validationText = meta && meta.validationLine ? meta.validationLine : '';
+  mirrorEl.textContent = mirrorText + (validationText ? ' ' + validationText : '');
+} else {
       /* Tied primaries: separate paragraph per category, then shared closing */
       const names = primaries.map(function (p) { return p.fullLabel; }).join(' and ');
       let parts = ['Your highest scores are tied across ' + names + '.'];
@@ -448,6 +450,7 @@ function showResults() {
           parts.push(m.tiedBody + ' ' + m.validationLine);
         }
       });
+      parts.push('The Zoom-Out work for both patterns is about learning to recognize when each one is narrowing your perspective, and finding your way back to a clearer and steadier view of what\'s actually happening.');
       parts.push('These patterns do not operate in isolation. When both are active, they tend to shape and amplify each other in ways that can feel hard to untangle — and that is exactly what your interpretation is designed to help you see. Your interpretation will show you how these patterns operate across different categories in your life and how to use them to your advantage.');
       mirrorEl.textContent = parts.join(' ');
     }
