@@ -450,10 +450,10 @@ function showResults() {
       });
       parts.push('These patterns do not operate in isolation. When both are active, they tend to shape and amplify each other in ways that can feel hard to untangle — and that is exactly what your interpretation is designed to help you see. Your interpretation will show you how these patterns operate across different categories in your life and how to use them to your advantage.');
       mirrorEl.textContent = parts.join(' ');
-  }
     }
-    buildGlossary();
   }
+  buildGlossary();
+}
 
 /* ============================================================
    ON LOAD
