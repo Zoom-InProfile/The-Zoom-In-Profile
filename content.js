@@ -65,68 +65,68 @@ const questions = [
   },
 
   // -------------------------
-  // SELF-JUDGMENT
-  // -------------------------
-  {
-    id: "self_1",
-    category: "self",
-    type: "scenario",
-    question: "You made a visible mistake in front of people whose opinion matters. You notice:",
-    answers: [
-      { text: "You note what to do differently and move on", score: 0 },
-      { text: "You feel embarrassed but can talk yourself down pretty quickly", score: 1 },
-      { text: "Your inner critic is loud and you keep replaying what happened into the night", score: 2 },
-      { text: "Your inner critic takes over — you turn against yourself and shut down", score: 3 }
-    ]
-  },
-  {
-    id: "self_2",
-    category: "self",
-    type: "scenario",
-    question: "You look back at a significant choice you regret. You notice:",
-    answers: [
-      { text: "You notice the thought, remind yourself you did your best, and move on", score: 0 },
-      { text: "You wish it hadn’t happened, but feel compassion for yourself and move through it", score: 1 },
-      { text: "You get pulled into regret and your inner critic starts judging you", score: 2 },
-      { text: "It feels heavier than regret — closer to self-loathing", score: 3 }
-    ]
-  },
-  {
-    id: "self_3",
-    category: "self",
-    type: "vulnerability",
-    question: "When something goes wrong, my inner critic is quick to blame me rather than the situation.",
-    answers: [
-      { text: "Never or rarely", score: 0 },
-      { text: "Sometimes", score: 1 },
-      { text: "Often", score: 2 },
-      { text: "Almost always", score: 3 }
-    ]
-  },
-  {
-    id: "self_4",
-    category: "self",
-    type: "vulnerability",
-    question: "I carry mistakes with me longer than I’d like.",
-    answers: [
-      { text: "Never or rarely", score: 0 },
-      { text: "Sometimes", score: 1 },
-      { text: "Often", score: 2 },
-      { text: "Almost always", score: 3 }
-    ]
-  },
-  {
-    id: "self_5",
-    category: "self",
-    type: "resilience",
-    question: "Even when I mess up, I stay on my own side.",
-    answers: [
-      { text: "Almost always", score: 0 },
-      { text: "Often", score: 1 },
-      { text: "Sometimes", score: 2 },
-      { text: "Never or rarely", score: 3 }
-    ]
-  },
+// APPRAISAL
+// -------------------------
+{
+  id: "appraisal_1",
+  category: "appraisal",
+  type: "scenario",
+  question: "You made a mistake that mattered to you. You notice:",
+  answers: [
+    { text: "You note what to do differently and move on", score: 0 },
+    { text: "You react and then offer yourself reassurance and move on", score: 1 },
+    { text: "Your inner critic is loud and you keep replaying what happened into the night", score: 2 },
+    { text: "Your inner critic takes over — you turn against yourself and shut down", score: 3 }
+  ]
+},
+{
+  id: "appraisal_2",
+  category: "appraisal",
+  type: "scenario",
+  question: "You look back at a significant choice you regret. You notice:",
+  answers: [
+    { text: "You notice the thought, remind yourself you did your best, and move on", score: 0 },
+    { text: "You wish it hadn't happened, but feel compassion for yourself and move through it", score: 1 },
+    { text: "You get pulled into regret and your inner critic starts judging you", score: 2 },
+    { text: "It feels heavier than regret — closer to self-loathing", score: 3 }
+  ]
+},
+{
+  id: "appraisal_3",
+  category: "appraisal",
+  type: "vulnerability",
+  question: "When something goes wrong, my inner critic is quick to blame me rather than the situation.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "appraisal_4",
+  category: "appraisal",
+  type: "vulnerability",
+  question: "I carry mistakes with me longer than I'd like.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "appraisal_5",
+  category: "appraisal",
+  type: "resilience",
+  question: "Even when I mess up, I stay on my own side.",
+  answers: [
+    { text: "Almost always", score: 0 },
+    { text: "Often", score: 1 },
+    { text: "Sometimes", score: 2 },
+    { text: "Never or rarely", score: 3 }
+  ]
+},
 
   // -------------------------
   // APPROVAL
