@@ -319,10 +319,6 @@ function buildGlossary() {
    RENDER RESULTS
 ============================================================ */
 function showResults() {
-/* ============================================================
-   RENDER RESULTS
-============================================================ */
-function showResults() {
   quizPage.classList.add('hidden');
   document.getElementById('results-page').classList.remove('hidden');
   window.scrollTo(0, 0);
