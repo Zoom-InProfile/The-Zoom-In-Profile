@@ -183,18 +183,20 @@ function updateNextBtn() {
 const categoryMeta = {
   somatic: {
     label: 'Somatic',
-    fullLabel: 'Somatically Sensitive',
+    fullLabel: 'Somatical-Sensitive',
     tiedName: 'Somatic',
     validationLine: 'Your body has been paying attention for a reason.',
     tiedBody: 'When Somatic is one of your primary patterns, physical sensation becomes the loudest signal in the room — and that same attunement is what makes you unusually aware of what your body needs before others even notice something is off.',
     mirror: 'mirror: 'Your primary stress pattern is Somatic-Sensitive. When this is your primary pattern, your nervous system has a finely tuned awareness of your body, and that attunement is genuinely valuable. Under stress that same awareness can shift from responsive to vigilant, scanning for threat rather than simply listening and responding. This is an intelligent response to real experience rather than a weakness, and the Zoom-Out work for this pattern is about learning to hear your body as a messenger rather than a threat detector.'
   },
-  self: {
-    label: 'Self',
-    fullLabel: 'Self-Judgment Sensitive',
-    tiedName: 'Self-Judgment',
-    validationLine: 'That inner voice shaped you as much as it challenges you.',
-    tiedBody: 'When Self-Judgment is one of your primary patterns, a single mistake can feel like evidence of something larger — and that same inner voice is what drives the high standards and self-awareness that make you good at what you do.',
+  appraisal: {
+  label: 'Appraisal',
+  fullLabel: 'Appraisal-Sensitive',
+  tiedName: 'Appraisal',
+  validationLine: 'You can hold yourself to a high standard and still be on your own side.',
+  tiedBody: 'When Appraisal is one of your primary patterns, a mistake or a moment of falling short can begin to be inappropriately labeled as evidence of something larger about who you are — and that same evaluative mind is what drives the self-awareness and high standards that make you unusually thoughtful about your own behavior and impact.',
+  mirror: '...' // the full mirror text we wrote above
+},
     mirror: 'mirror: 'Your primary stress pattern is Appraisal-Sensitive. People in the Appraisal category have a highly active evaluative mind, one that processes experiences quickly, notices what went wrong, and holds itself to a standard. That capacity tends to drive real self-awareness and a genuine desire to do better, and it often makes people in this category unusually thoughtful about their own behavior and impact. Under stress that same evaluative process can turn harsh. A mistake or a moment of falling short may not just register as an event, it can begin to be inappropriately labeled as evidence of something larger about who you are. And the internal voice that delivers that verdict can be critical and difficult to argue with from the inside, because the same mind doing the evaluating is also the one being evaluated. What makes this pattern particularly common among high-functioning people is that the critic and the conscience are running on the same engine. That\'s part of why simply being told to be kinder to yourself often doesn\'t land. The self-criticism and the self-awareness aren\'t separate things, they\'re two expressions of the same capacity, and that capacity is also genuinely a strength. The Zoom-Out work for this pattern is about learning to notice when the appraisal has shifted from accurate to harsh, and finding your way back to a clearer and kinder read of what actually happened. Many people in this pattern believe the inner critic is what keeps them sharp, or that they deserve its judgment. Both are worth examining, because the evaluative mind doesn\'t need to be punishing to be effective. You can hold yourself to a high standard and still be on your own side. That combination is not only possible, it tends to work considerably better.'
   },
   approval: {
