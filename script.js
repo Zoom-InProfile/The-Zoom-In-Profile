@@ -293,7 +293,32 @@ function calculateScores() {
   });
   return totals;
 }
+function buildGlossary() {
+  const glossaryContent = document.getElementById('glossary-content');
+  if (!glossaryContent) return;
+  glossaryContent.innerHTML = '';
+  const categoryOrder = ['somatic', 'appraisal', 'perception', 'connection', 'influence', 'balance', 'comfort', 'attunement', 'certainty'];
+  categoryOrder.forEach(function(cat) {
+    const meta = categoryMeta[cat];
+    if (!meta) return;
+    const item = document.createElement('div');
+    item.classList.add('glossary-item');
+    const name = document.createElement('span');
+    name.classList.add('glossary-name');
+    name.textContent = meta.label;
+    const desc = document.createElement('span');
+    desc.classList.add('glossary-desc');
+    desc.textContent = ' — ' + meta.descriptor;
+    item.appendChild(name);
+    item.appendChild(desc);
+    glossaryContent.appendChild(item);
+  });
+}
 
+/* ============================================================
+   RENDER RESULTS
+============================================================ */
+function showResults() {
 /* ============================================================
    RENDER RESULTS
 ============================================================ */
@@ -429,9 +454,10 @@ function showResults() {
       });
       parts.push('These patterns do not operate in isolation. When both are active, they tend to shape and amplify each other in ways that can feel hard to untangle — and that is exactly what your interpretation is designed to help you see. Your interpretation will show you how these patterns operate across different categories in your life and how to use them to your advantage.');
       mirrorEl.textContent = parts.join(' ');
-    }
   }
-}
+    }
+    buildGlossary();
+  }
 
 /* ============================================================
    ON LOAD
