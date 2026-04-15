@@ -1638,3 +1638,15 @@ body {
   background-color: var(--accent);
   color: var(--black);
 }
+.glossary-item {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.glossary-name {
+  font-weight: 500;
+}
+
+.glossary-desc {
+  font-weight: 300;
+}
