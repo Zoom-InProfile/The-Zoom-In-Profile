@@ -129,11 +129,11 @@ const questions = [
 },
 
   // -------------------------
-  // APPROVAL
+  // PERCEPTION
   // -------------------------
   {
-    id: "approval_1",
-    category: "approval",
+    id: "perception_1",
+    category: "perception",
     type: "scenario",
     question: "You have an important presentation or conversation with someone you want to impress. You notice:",
     answers: [
@@ -144,8 +144,8 @@ const questions = [
     ]
   },
   {
-    id: "approval_2",
-    category: "approval",
+    id: "perception_2",
+    category: "perception",
     type: "scenario",
     question: "Someone whose opinion matters gives you critical feedback that doesn’t feel fair. You notice:",
     answers: [
@@ -156,8 +156,8 @@ const questions = [
     ]
   },
   {
-    id: "approval_3",
-    category: "approval",
+    id: "perception_3",
+    category: "perception",
     type: "scenario",
     question: "Someone close to you strongly disagrees with a choice you made. You notice:",
     answers: [
@@ -168,8 +168,8 @@ const questions = [
     ]
   },
   {
-    id: "approval_4",
-    category: "approval",
+    id: "perception_4",
+    category: "perception",
     type: "vulnerability",
     question: "I replay conversations, wondering how I came across.",
     answers: [
@@ -180,8 +180,8 @@ const questions = [
     ]
   },
   {
-    id: "approval_5",
-    category: "approval",
+    id: "perception_5",
+    category: "perception",
     type: "resilience",
     question: "I act from my own values even when I’m unsure how others will respond.",
     answers: [
@@ -319,11 +319,11 @@ const questions = [
   ]
 },
 // -------------------------
-// CAPACITY
+// BALANCE
 // -------------------------
 {
-  id: "capacity_1",
-  category: "capacity",
+  id: "balance_1",
+  category: "balance",
   type: "scenario",
   question: "You’re in a stretch where the demands on you don’t let up. You notice:",
   answers: [
@@ -334,8 +334,8 @@ const questions = [
   ]
 },
 {
-  id: "capacity_2",
-  category: "capacity",
+  id: "balance_2",
+  category: "balance",
   type: "scenario",
   question: "Your plate feels completely full and someone asks you to take on something more, you notice:",
   answers: [
@@ -346,8 +346,8 @@ const questions = [
   ]
 },
 {
-  id: "capacity_3",
-  category: "capacity",
+  id: "balance_3",
+  category: "balance",
   type: "vulnerability",
   question: "Even on lighter days, I tend to feel like I have little left to give.",
   answers: [
@@ -358,8 +358,8 @@ const questions = [
   ]
 },
 {
-  id: "capacity_4",
-  category: "capacity",
+  id: "balance_4",
+  category: "balance",
   type: "vulnerability",
   question: "When it feels like too much, I put things off or avoid what needs to get done.",
   answers: [
@@ -370,8 +370,8 @@ const questions = [
   ]
 },
 {
-  id: "capacity_5",
-  category: "capacity",
+  id: "balance_5",
+  category: "balance",
   type: "resilience",
   question: "I handle a full load without getting overwhelmed.",
   answers: [
@@ -382,11 +382,11 @@ const questions = [
   ]
 },
 // ---------------------------
-  // CHANGE
+  // COMFORT
   // ---------------------------
   {
-    id: "change_1",
-    category: "change",
+    id: "comfort_1",
+    category: "comfort",
     type: "scenario",
     question: "You experience a major change you didn't see coming. You notice:",
     answers: [
@@ -397,8 +397,8 @@ const questions = [
     ]
   },
   {
-    id: "change_2",
-    category: "change",
+    id: "comfort_2",
+    category: "comfort",
     type: "scenario",
     question: "You decided to make a big change, and it's been harder than you anticipated. You notice:",
     answers: [
@@ -409,8 +409,8 @@ const questions = [
     ]
   },
   {
-    id: "change_3",
-    category: "change",
+    id: "comfort_3",
+    category: "comfort",
     type: "vulnerability",
     question: "I dread upcoming changes even when I know they might be good for me.",
     answers: [
@@ -421,8 +421,8 @@ const questions = [
     ]
   },
   {
-    id: "change_4",
-    category: "change",
+    id: "comfort_4",
+    category: "comfort",
     type: "resilience",
     question: "When things change, I stay open to what's ahead rather than dwelling on what I lost.",
     answers: [
@@ -433,8 +433,8 @@ const questions = [
     ]
   },
   {
-    id: "change_5",
-    category: "change",
+    id: "comfort_5",
+    category: "comfort",
     type: "resilience",
     question: "I enjoy trying new things even when I'm not good at them yet.",
     answers: [
@@ -446,11 +446,11 @@ const questions = [
   },
 
   // ---------------------------
-  // HUMANITY
+  // ATTUNEMENT
   // ---------------------------
   {
-    id: "global_1",
-    category: "humanity",
+    id: "attunement_1",
+    category: "attunement",
     type: "scenario",
     question: "The news has been upsetting and relentless for weeks. You notice:",
     answers: [
@@ -461,8 +461,8 @@ const questions = [
     ]
   },
   {
-    id: "global_2",
-    category: "humanity",
+    id: "attunement_2",
+    category: "attunement",
     type: "scenario",
     question: "You witness something that deeply violates your sense of what is right, in an institution, a community, or the world. You notice:",
     answers: [
@@ -473,8 +473,8 @@ const questions = [
     ]
   },
   {
-    id: "global_3",
-    category: "humanity",
+    id: "attunement_3",
+    category: "attunement",
     type: "vulnerability",
     question: "I tend to suffer when terrible things happen in the world, as if they are happening to me.",
     answers: [
@@ -485,8 +485,8 @@ const questions = [
     ]
   },
   {
-    id: "global_4",
-    category: "humanity",
+    id: "attunement_4",
+    category: "attunement",
     type: "resilience",
     question: "I tend to stay focused on my purpose and hopefulness despite the suffering or injustices in the world.",
     answers: [
@@ -497,8 +497,8 @@ const questions = [
     ]
   },
   {
-    id: "global_5",
-    category: "humanity",
+    id: "attunement_5",
+    category: "attunement",
     type: "resilience",
     question: "I allow myself moments of hope or beauty without guilt when the world feels heavy.",
     answers: [
@@ -510,11 +510,11 @@ const questions = [
   },
 
   // ---------------------------
-  // UNCERTAINTY
+  // CERTAINTY
   // ---------------------------
   {
-    id: "uncertainty_1",
-    category: "uncertainty",
+    id: "certainty_1",
+    category: "certainty",
     type: "scenario",
     question: "You're waiting for important news that could take days or weeks. You notice:",
     answers: [
@@ -525,8 +525,8 @@ const questions = [
     ]
   },
   {
-    id: "uncertainty_2",
-    category: "uncertainty",
+    id: "certainty_2",
+    category: "certainty",
     type: "scenario",
     question: "You're dealing with a situation that may not have a clear resolution for a long time, possibly ever. You notice:",
     answers: [
@@ -537,8 +537,8 @@ const questions = [
     ]
   },
   {
-    id: "uncertainty_3",
-    category: "uncertainty",
+    id: "certainty_3",
+    category: "certainty",
     type: "vulnerability",
     question: "I tend to catastrophize when something important is uncertain.",
     answers: [
@@ -549,8 +549,8 @@ const questions = [
     ]
   },
   {
-    id: "uncertainty_4",
-    category: "uncertainty",
+    id: "certainty_4",
+    category: "certainty",
     type: "vulnerability",
     question: "When something important is uncertain or at stake, I find myself searching for information about what could go wrong.",
     answers: [
@@ -561,8 +561,8 @@ const questions = [
     ]
   },
   {
-    id: "uncertainty_5",
-    category: "uncertainty",
+    id: "certainty_5",
+    category: "certainty",
     type: "resilience",
     question: "My mind typically goes to what I want to happen rather than what I don't.",
     answers: [
@@ -573,3 +573,5 @@ const questions = [
     ]
   }
 ];
+
+
