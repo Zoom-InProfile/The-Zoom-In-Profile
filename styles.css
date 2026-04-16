@@ -1650,3 +1650,10 @@ body {
 .glossary-desc {
   font-weight: 300;
 }
+
+.results-copyright {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #999;
+  padding: 1.5rem 1rem;
+}
