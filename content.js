@@ -129,68 +129,68 @@ const questions = [
 },
 
   // -------------------------
-  // PERCEPTION
-  // -------------------------
-  {
-    id: "perception_1",
-    category: "perception",
-    type: "scenario",
-    question: "You have an important presentation or conversation with someone you want to impress. You notice:",
-    answers: [
-      { text: "You feel some nerves, but prepare and trust yourself — the anxiety becomes energy", score: 0 },
-      { text: "You feel real anxiety, but usually find your footing once you begin", score: 1 },
-      { text: "You find yourself thinking a lot about how you’ll come across and trying to get it just right", score: 2 },
-      { text: "You become highly focused on how you’re being perceived — adjusting, rehearsing, or shaping yourself to land well", score: 3 }
-    ]
-  },
-  {
-    id: "perception_2",
-    category: "perception",
-    type: "scenario",
-    question: "Someone whose opinion matters gives you critical feedback that doesn’t feel fair. You notice:",
-    answers: [
-      { text: "You take what’s useful, set aside the rest, and move on", score: 0 },
-      { text: "You feel stung, but find perspective pretty quickly", score: 1 },
-      { text: "You have trouble shaking it and keep wondering if it changed how they see you", score: 2 },
-      { text: "You feel it land as confirmation of what you fear they already think", score: 3 }
-    ]
-  },
-  {
-    id: "perception_3",
-    category: "perception",
-    type: "scenario",
-    question: "Someone close to you strongly disagrees with a choice you made. You notice:",
-    answers: [
-      { text: "You stay grounded in your position, even if they don’t agree", score: 0 },
-      { text: "You feel the tension, but can still stay connected to what you believe", score: 1 },
-      { text: "You feel pulled by their disapproval and start to get defensive or question yourself", score: 2 },
-      { text: "You feel triggered and reactive — it’s hard to think clearly and you snap or shut down", score: 3 }
-    ]
-  },
-  {
-    id: "perception_4",
-    category: "perception",
-    type: "vulnerability",
-    question: "I replay conversations, wondering how I came across.",
-    answers: [
-      { text: "Never or rarely", score: 0 },
-      { text: "Sometimes", score: 1 },
-      { text: "Often", score: 2 },
-      { text: "Almost always", score: 3 }
-    ]
-  },
-  {
-    id: "perception_5",
-    category: "perception",
-    type: "resilience",
-    question: "I act from my own values even when I’m unsure how others will respond.",
-    answers: [
-      { text: "Almost always", score: 0 },
-      { text: "Often", score: 1 },
-      { text: "Sometimes", score: 2 },
-      { text: "Never or rarely", score: 3 }
-    ]
-  },
+// PERCEPTION
+// -------------------------
+{
+  id: "perception_1",
+  category: "perception",
+  type: "scenario",
+  question: "You have an important presentation or conversation with someone you want to impress. You notice:",
+  answers: [
+    { text: "You prepare and trust yourself to do well", score: 0 },
+    { text: "You prepare and feel some nerves, but know you'll do fine once you get started", score: 1 },
+    { text: "You worry about how you'll come across and rehearse to get it just right", score: 2 },
+    { text: "You become highly focused on how you'll be perceived — and are afraid you may freeze", score: 3 }
+  ]
+},
+{
+  id: "perception_2",
+  category: "perception",
+  type: "scenario",
+  question: "Someone whose opinion matters gives you critical feedback that doesn't feel fair. You notice:",
+  answers: [
+    { text: "You take what's useful, set aside the rest, and move on", score: 0 },
+    { text: "You feel stung, but find perspective pretty quickly", score: 1 },
+    { text: "You have trouble shaking it and keep wondering if it changed how they see you", score: 2 },
+    { text: "You feel it land as confirmation of what you fear they already think", score: 3 }
+  ]
+},
+{
+  id: "perception_3",
+  category: "perception",
+  type: "vulnerability",
+  question: "I replay conversations, wondering how I came across.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "perception_4",
+  category: "perception",
+  type: "resilience",
+  question: "I have no problem stating my own opinions when I'm unsure how others will respond.",
+  answers: [
+    { text: "Almost always", score: 0 },
+    { text: "Often", score: 1 },
+    { text: "Sometimes", score: 2 },
+    { text: "Never or rarely", score: 3 }
+  ]
+},
+{
+  id: "perception_5",
+  category: "perception",
+  type: "resilience",
+  question: "I move through social interactions without tracking how I'm being received.",
+  answers: [
+    { text: "Almost always", score: 0 },
+    { text: "Often", score: 1 },
+    { text: "Sometimes", score: 2 },
+    { text: "Never or rarely", score: 3 }
+  ]
+},
   // -------------------------
 // CONNECTION
 // -------------------------
