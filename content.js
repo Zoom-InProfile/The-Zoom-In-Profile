@@ -261,31 +261,31 @@ const questions = [
   id: "influence_1",
   category: "influence",
   type: "scenario",
-  question: "Someone you love is making a choice you believe will hurt them, and they aren't listening. You notice:",
+  question: "Someone you love is making a choice you believe won't go well, and they aren't listening. You notice:",
   answers: [
-    { text: "You share your perspective and accept that the choice is theirs", score: 0 },
-    { text: "You feel concerned but can accept their choice even though you disagree", score: 1 },
-    { text: "You keep looking for a way to get through to them", score: 2 },
-    { text: "You feel the weight of your powerlessness in your body and can't stop looking for solutions", score: 3 }
+    { text: "You share your perspective and can accept that the choice is theirs", score: 0 },
+    { text: "You feel concerned and want them to see it, but you can let it go", score: 1 },
+    { text: "You feel a strong pull to make them understand, and it's hard to step back", score: 2 },
+    { text: "You feel responsible for what happens and can't let it go, even when it's not working", score: 3 }
   ]
 },
 {
   id: "influence_2",
   category: "influence",
   type: "scenario",
-  question: "You clearly see how a situation you care about could go better, but the decision isn't yours to make. You notice:",
+  question: "You can clearly see how a situation you care about could go better, but the decision isn't yours to make. You notice:",
   answers: [
-    { text: "You offer your input and let the outcome unfold", score: 0 },
-    { text: "You feel some frustration but can move on once you've spoken", score: 1 },
-    { text: "You keep thinking about it, wishing you could do more", score: 2 },
-    { text: "You feel a sharp frustration or dread, and continue looking for any angle that might change the outcome", score: 3 }
+    { text: "You feel at peace after sharing your perspective", score: 0 },
+    { text: "You feel some frustration, but you can let it go", score: 1 },
+    { text: "You keep thinking about it and find it hard to step back", score: 2 },
+    { text: "You feel responsible for how it turns out and keep trying to influence it, even when it's not working", score: 3 }
   ]
 },
 {
   id: "influence_3",
   category: "influence",
   type: "vulnerability",
-  question: "Watching an obvious solution be ignored in something I care about really bothers me.",
+  question: "I find it very difficult to step back when someone I feel responsible for is making choices I believe won't go well.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -297,7 +297,7 @@ const questions = [
   id: "influence_4",
   category: "influence",
   type: "vulnerability",
-  question: "If I witness someone I love moving slowly, while running late, I find myself losing my patience or withdrawing into worry.",
+  question: "I feel personally responsible for the well-being of the people I love.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -309,7 +309,7 @@ const questions = [
   id: "influence_5",
   category: "influence",
   type: "resilience",
-  question: "When someone I love won't take my advice, I give them my perspective and let it go.",
+  question: "When someone I love has a choice to make, I share my perspective and accept that the choice is theirs.",
   answers: [
     { text: "Almost always", score: 0 },
     { text: "Often", score: 1 },
