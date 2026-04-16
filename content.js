@@ -316,39 +316,38 @@ const questions = [
     { text: "Sometimes", score: 2 },
     { text: "Never or rarely", score: 3 }
   ]
-},
-// -------------------------
+},// -------------------------
 // BALANCE
 // -------------------------
 {
   id: "balance_1",
   category: "balance",
   type: "scenario",
-  question: "You’re in a stretch where the demands on you don’t let up. You notice:",
+  question: "When demands pile up and you need to plan your strategy to get everything done, you notice:",
   answers: [
-    { text: "You feel calm and able to stay focused on what matters", score: 0 },
-    { text: "You feel pressure building, but can still stay on top of things", score: 1 },
-    { text: "You feel stretched and scattered, like it’s getting harder to keep up", score: 2 },
-    { text: "You feel overwhelmed and like everything is starting to fall apart", score: 3 }
+    { text: "You stay focused on what matters most", score: 0 },
+    { text: "You feel pressure building, but can still prioritize", score: 1 },
+    { text: "It's getting harder to sort what matters most", score: 2 },
+    { text: "Everything feels equally important and you don't know where to start", score: 3 }
   ]
 },
 {
   id: "balance_2",
   category: "balance",
   type: "scenario",
-  question: "Your plate feels completely full and someone asks you to take on something more, you notice:",
+  question: "Your plate feels completely full and someone asks you to take on something more. You notice:",
   answers: [
-    { text: "You assess it and either take it on or say no without much strain", score: 0 },
-    { text: "You feel the pressure, but are able to think it through before responding", score: 1 },
-    { text: "You feel on the edge of overwhelm and aren’t sure you can handle much more", score: 2 },
-    { text: "You feel completely overwhelmed and like you can’t function", score: 3 }
+    { text: "You assess whether you can take on something more", score: 0 },
+    { text: "You feel pressure, but think through your ability to take on more", score: 1 },
+    { text: "You struggle deciding if you could take on something more", score: 2 },
+    { text: "You are unable to determine what's manageable, it all seems like too much", score: 3 }
   ]
 },
 {
   id: "balance_3",
   category: "balance",
   type: "vulnerability",
-  question: "Even on lighter days, I tend to feel like I have little left to give.",
+  question: "When I have a lot to do, everything feels equally important and I have trouble deciding what to prioritize.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -372,7 +371,7 @@ const questions = [
   id: "balance_5",
   category: "balance",
   type: "resilience",
-  question: "I handle a full load without getting overwhelmed.",
+  question: "When my plate is full I can identify what matters most and set the rest aside without much difficulty.",
   answers: [
     { text: "Almost always", score: 0 },
     { text: "Often", score: 1 },
