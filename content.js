@@ -200,10 +200,10 @@ const questions = [
   type: "scenario",
   question: "You feel some distance from a loved one — nothing dramatic, just off. You notice:",
   answers: [
-    { text: "You feel the distance but still feel loved and connected", score: 0 },
+    { text: "You notice the distance and feel loved and connected", score: 0 },
     { text: "You feel the distance and a subtle uneasiness", score: 1 },
-    { text: "You start to feel less loved, and it begins to affect your mood", score: 2 },
-    { text: "You feel a sharp drop in feeling loved, and everything starts to feel less good", score: 3 }
+    { text: "You start to question their love for you", score: 2 },
+    { text: "You feel unloved and find yourself pulling away or seeking reassurance", score: 3 }
   ]
 },
 {
@@ -222,7 +222,7 @@ const questions = [
   id: "connection_3",
   category: "connection",
   type: "vulnerability",
-  question: "When I don’t feel loved in an important relationship, I feel anxious and fragile.",
+  question: "When I don't feel loved in an important relationship, I feel anxious and fragile.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -234,7 +234,7 @@ const questions = [
   id: "connection_4",
   category: "connection",
   type: "vulnerability",
-  question: "When someone I care about is upset with me, I instantly feel unloved.",
+  question: "When I am having conflict with someone close to me, I find myself either pushing to resolve it quickly or pulling away entirely.",
   answers: [
     { text: "Never or rarely", score: 0 },
     { text: "Sometimes", score: 1 },
@@ -246,7 +246,7 @@ const questions = [
   id: "connection_5",
   category: "connection",
   type: "resilience",
-  question: "When someone I love is quiet or distant, I trust that it isn't about me.",
+  question: "When a relationship feels tense or difficult, I don't think to question how loved I am.",
   answers: [
     { text: "Almost always", score: 0 },
     { text: "Often", score: 1 },
@@ -254,7 +254,6 @@ const questions = [
     { text: "Never or rarely", score: 3 }
   ]
 },
-
 // -------------------------
 // INFLUENCE
 // -------------------------
