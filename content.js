@@ -505,69 +505,67 @@ const questions = [
     { text: "Never or rarely", score: 3 }
   ]
 },
-  // ---------------------------
-  // CERTAINTY
-  // ---------------------------
-  {
-    id: "certainty_1",
-    category: "certainty",
-    type: "scenario",
-    question: "You're waiting for important news that could take days or weeks. You notice:",
-    answers: [
-      { text: "You know the uncertainty is temporary and stay focused on what you can do today", score: 0 },
-      { text: "You feel tension and check for updates more than usual, but it doesn't affect your sleep or your day", score: 1 },
-      { text: "Your mind rehearses worst-case outcomes, as if preparing now will soften the blow later", score: 2 },
-      { text: "A fear you can't reason your way out of settles in and stays, making it hard to feel okay until you know", score: 3 }
-    ]
-  },
-  {
-    id: "certainty_2",
-    category: "certainty",
-    type: "scenario",
-    question: "You're dealing with a situation that may not have a clear resolution for a long time, possibly ever. You notice:",
-    answers: [
-      { text: "You accept that some things stay unresolved and it doesn't occupy much of your thinking", score: 0 },
-      { text: "You think about it more than you'd like, but you can set it aside and function normally most of the time", score: 1 },
-      { text: "It sits in the background of most days, pulling at your attention and making it hard to feel fully settled", score: 2 },
-      { text: "The open-endedness feels unbearable, and your mind keeps returning to it with fear or dread no matter what you do", score: 3 }
-    ]
-  },
-  {
-    id: "certainty_3",
-    category: "certainty",
-    type: "vulnerability",
-    question: "I tend to catastrophize when something important is uncertain.",
-    answers: [
-      { text: "Never or rarely", score: 0 },
-      { text: "Sometimes", score: 1 },
-      { text: "Often", score: 2 },
-      { text: "Almost always", score: 3 }
-    ]
-  },
-  {
-    id: "certainty_4",
-    category: "certainty",
-    type: "vulnerability",
-    question: "When something important is uncertain or at stake, I find myself searching for information about what could go wrong.",
-    answers: [
-      { text: "Never or rarely", score: 0 },
-      { text: "Sometimes", score: 1 },
-      { text: "Often", score: 2 },
-      { text: "Almost always", score: 3 }
-    ]
-  },
-  {
-    id: "certainty_5",
-    category: "certainty",
-    type: "resilience",
-    question: "My mind typically goes to what I want to happen rather than what I don't.",
-    answers: [
-      { text: "Almost always", score: 0 },
-      { text: "Often", score: 1 },
-      { text: "Sometimes", score: 2 },
-      { text: "Never or rarely", score: 3 }
-    ]
-  }
+  // -------------------------
+// CERTAINTY
+// -------------------------
+{
+  id: "certainty_1",
+  category: "certainty",
+  type: "scenario",
+  question: "When something important in your life is unresolved, you notice:",
+  answers: [
+    { text: "You can set it aside and return to it when needed", score: 0 },
+    { text: "You think about it more than usual, but it doesn't interfere with your day", score: 1 },
+    { text: "Your mind keeps returning to it, and it's hard to fully put it aside", score: 2 },
+    { text: "You can't fully relax or move on until you've worked through it and reached some kind of conclusion", score: 3 }
+  ]
+},
+{
+  id: "certainty_2",
+  category: "certainty",
+  type: "scenario",
+  question: "You're dealing with a situation that may not have a clear resolution for a long time, possibly ever. You notice:",
+  answers: [
+    { text: "You accept the uncertainty and don't spend much time trying to resolve it", score: 0 },
+    { text: "You think about it and gather some information, but can set it aside", score: 1 },
+    { text: "You spend a lot of time trying to understand it and find some clarity", score: 2 },
+    { text: "You feel driven to keep working on it, even knowing a clear answer may not be possible", score: 3 }
+  ]
+},
+{
+  id: "certainty_3",
+  category: "certainty",
+  type: "vulnerability",
+  question: "When something important to me is uncertain, my mind keeps working on it until I've found some kind of resolution.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "certainty_4",
+  category: "certainty",
+  type: "vulnerability",
+  question: "When I don't have enough information about something important, it's hard for me to stop trying to figure it out.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "certainty_5",
+  category: "certainty",
+  type: "resilience",
+  question: "When something worrisome is unresolved, I can set it aside and trust I'll deal with it when I need to.",
+  answers: [
+    { text: "Almost always", score: 0 },
+    { text: "Often", score: 1 },
+    { text: "Sometimes", score: 2 },
+    { text: "Never or rarely", score: 3 }
+  ]
+}
 ];
-
-
