@@ -219,7 +219,37 @@
       <p>This tool is not monitored and responses are not reviewed unless you choose to share them. It does not provide real-time support.</p>
       <p>If you are in immediate distress or feel at risk of harming yourself or others, please call 911, go to your nearest emergency room, or contact the Suicide &amp; Crisis Lifeline by dialing <strong>988</strong>.</p>
     </div>
+</div>
 
+    <div class="results-data-form" id="data-form">
+      <h3 class="results-block-heading results-block-heading--caps">Save Your Results</h3>
+      <p class="data-form-intro">Enter your email to receive a copy of your results, and help us improve the assessment. Your scores are collected anonymously to support ongoing research.</p>
+      <div class="form-fields">
+        <input type="text" id="form-name" placeholder="First name" />
+        <input type="email" id="form-email" placeholder="Email address" />
+        <select id="form-age">
+          <option value="">Age range</option>
+          <option value="Under 25">Under 25</option>
+          <option value="25-34">25-34</option>
+          <option value="35-44">35-44</option>
+          <option value="45-54">45-54</option>
+          <option value="55-64">55-64</option>
+          <option value="65-74">65-74</option>
+          <option value="75 and over">75 and over</option>
+        </select>
+        <select id="form-gender">
+          <option value="">Gender</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+          <option value="Other">Other</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+        <p class="accuracy-question">How accurately does this profile describe you?</p>
+        <div class="accuracy-scale" id="accuracy-scale"></div>
+      </div>
+      <button class="btn-primary" id="submit-data-btn">Submit</button>
+      <p class="form-note" id="form-status"></p>
+    </div>
     <div class="results-retake">
       <button class="btn-secondary" id="retake-btn">Retake the Profile</button>
     </div>
