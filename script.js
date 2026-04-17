@@ -456,8 +456,86 @@ function showResults() {
     }
   }
   buildGlossary();
+  initDataForm();
+}
+/* Data Collection Form */
+function initDataForm() {
+  const scaleEl = document.getElementById('accuracy-scale');
+  let selectedAccuracy = null;
+
+  for (let i = 1; i <= 5; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'accuracy-btn';
+    btn.textContent = i;
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.accuracy-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedAccuracy = i;
+    });
+    scaleEl.appendChild(btn);
+  }
+
+  document.getElementById('submit-data-btn').addEventListener('click', async function() {
+    const name = document.getElementById('form-name').value.trim();
+    const email = document.getElementById('form-email').value.trim();
+    const age = document.getElementById('form-age').value;
+    const gender = document.getElementById('form-gender').value;
+    const statusEl = document.getElementById('form-status');
+    const scores = calculateScores();
+    const primary = getPrimaryType(scores);
+
+    const AIRTABLE_TOKEN = 'patx16V5sirHe944I.cc59aa32fc93d895acbd1dd3a60a712b3b0ca194750e28ac9469e4a628316ce4';
+    const BASE_ID = 'appoiZOho3OE12Hlk';
+    const TABLE_NAME = 'Responses';
+
+    const fields = {
+      'Name': name,
+      'Email': email,
+      'Age Range': age,
+      'Gender': gender,
+      'Depletion': state.depletionScore,
+      'Somatic': scores.somatic || 0,
+      'Appraisal': scores.appraisal || 0,
+      'Perception': scores.perception || 0,
+      'Connection': scores.connection || 0,
+      'Influence': scores.influence || 0,
+      'Balance': scores.balance || 0,
+      'Comfort': scores.comfort || 0,
+      'Attunement': scores.attunement || 0,
+      'Certainty': scores.certainty || 0,
+      'Primary Type': primary,
+      'Accuracy Rating': selectedAccuracy,
+      'Submitted At': new Date().toISOString()
+    };
+
+    try {
+      statusEl.textContent = 'Submitting...';
+      const response = await fetch(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ fields })
+      });
+
+      if (response.ok) {
+        statusEl.textContent = 'Thank you! Your results have been saved.';
+        document.getElementById('submit-data-btn').disabled = true;
+      } else {
+        statusEl.textContent = 'Something went wrong. Please try again.';
+      }
+    } catch (err) {
+      statusEl.textContent = 'Something went wrong. Please try again.';
+    }
+  });
 }
 
+function getPrimaryType(scores) {
+  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  const topKey = sorted[0][0];
+  return categoryMeta[topKey] ? categoryMeta[topKey].fullLabel : topKey;
+}
 /* ============================================================
    ON LOAD
 ============================================================ */
