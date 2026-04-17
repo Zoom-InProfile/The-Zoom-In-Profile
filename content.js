@@ -442,70 +442,69 @@ const questions = [
     { text: "Never or rarely", score: 3 }
   ]
 },
-  // ---------------------------
-  // ATTUNEMENT
-  // ---------------------------
-  {
-    id: "attunement_1",
-    category: "attunement",
-    type: "scenario",
-    question: "The news has been upsetting and relentless for weeks. You notice:",
-    answers: [
-      { text: "You stay informed without over-consuming and don't get pulled under by it", score: 0 },
-      { text: "You feel a low hum of collective sadness in the background, but it doesn't follow you into your day", score: 1 },
-      { text: "You feel angry and helpless, and it starts to affect your mood and your ability to focus", score: 2 },
-      { text: "You cycle between numbing out and being overwhelmed, and it starts to affect your relationships and your ability to function", score: 3 }
-    ]
-  },
-  {
-    id: "attunement_2",
-    category: "attunement",
-    type: "scenario",
-    question: "You witness something that deeply violates your sense of what is right, in an institution, a community, or the world. You notice:",
-    answers: [
-      { text: "You feel genuinely upset without taking the pain on as your own", score: 0 },
-      { text: "You feel disturbed and sit with it for a while, but find your way back to yourself without too much difficulty", score: 1 },
-      { text: "A weight settles in and stays, making it harder to be fully present in your own life", score: 2 },
-      { text: "You lose trust in people or institutions, and it becomes hard to feel grounded or safe in your own life", score: 3 }
-    ]
-  },
-  {
-    id: "attunement_3",
-    category: "attunement",
-    type: "vulnerability",
-    question: "I tend to suffer when terrible things happen in the world, as if they are happening to me.",
-    answers: [
-      { text: "Never or rarely", score: 0 },
-      { text: "Sometimes", score: 1 },
-      { text: "Often", score: 2 },
-      { text: "Almost always", score: 3 }
-    ]
-  },
-  {
-    id: "attunement_4",
-    category: "attunement",
-    type: "resilience",
-    question: "I tend to stay focused on my purpose and hopefulness despite the suffering or injustices in the world.",
-    answers: [
-      { text: "Almost always", score: 0 },
-      { text: "Often", score: 1 },
-      { text: "Sometimes", score: 2 },
-      { text: "Never or rarely", score: 3 }
-    ]
-  },
-  {
-    id: "attunement_5",
-    category: "attunement",
-    type: "resilience",
-    question: "I allow myself moments of hope or beauty without guilt when the world feels heavy.",
-    answers: [
-      { text: "Almost always", score: 0 },
-      { text: "Often", score: 1 },
-      { text: "Sometimes", score: 2 },
-      { text: "Never or rarely", score: 3 }
-    ]
-  },
-
+  // -------------------------
+// ATTUNEMENT
+// -------------------------
+{
+  id: "attunement_1",
+  category: "attunement",
+  type: "scenario",
+  question: "Someone close to you shares something painful they are going through. You notice:",
+  answers: [
+    { text: "You feel genuine care and remain grounded in your own emotional state", score: 0 },
+    { text: "You feel their pain strongly during the conversation, and return to yourself once it ends", score: 1 },
+    { text: "Their distress is hard to set down and follows you into the rest of your day", score: 2 },
+    { text: "Their pain stays with you, and it's hard to fully return to your own emotional state", score: 3 }
+  ]
+},
+{
+  id: "attunement_2",
+  category: "attunement",
+  type: "scenario",
+  question: "You walk into a social situation where there is tension, even if nothing has been said directly. You notice:",
+  answers: [
+    { text: "You sense the tension and remain grounded in your own emotional state", score: 0 },
+    { text: "You feel the discomfort in the room while you're there, but it lifts once you leave", score: 1 },
+    { text: "The emotional atmosphere follows you out and is hard to set down for the rest of your day", score: 2 },
+    { text: "By the time you leave, it's hard to separate what you came in feeling from what you picked up in the room", score: 3 }
+  ]
+},
+{
+  id: "attunement_3",
+  category: "attunement",
+  type: "vulnerability",
+  question: "After spending time with someone who is upset, I need time alone to return to myself.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "attunement_4",
+  category: "attunement",
+  type: "vulnerability",
+  question: "I tend to absorb the emotional atmosphere of a place.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "attunement_5",
+  category: "attunement",
+  type: "resilience",
+  question: "After being with someone in pain, I can acknowledge what they are going through and return to my own emotional state without much difficulty.",
+  answers: [
+    { text: "Almost always", score: 0 },
+    { text: "Often", score: 1 },
+    { text: "Sometimes", score: 2 },
+    { text: "Never or rarely", score: 3 }
+  ]
+},
   // ---------------------------
   // CERTAINTY
   // ---------------------------
