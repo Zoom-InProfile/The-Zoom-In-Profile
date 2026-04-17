@@ -188,7 +188,7 @@ const categoryMeta = {
     tiedName: 'Somatic',
     validationLine: 'Your body has been paying attention for a reason.',
     tiedBody: 'When Somatic is one of your primary patterns, physical sensation becomes the loudest signal in the room — and that same attunement is what makes you unusually aware of what your body needs before others even notice something is off.',
-    mirror: 'Your primary stress pattern is Somatic-Sensitive. Your nervous system has a finely tuned awareness of your body, and that attunement is genuinely valuable. Under stress that same awareness can shift from responsive to vigilant, scanning for threat rather than simply listening and responding. This is an intelligent response to real experience rather than a weakness, and the Zoom-Out work for this pattern is about learning to hear your body as a messenger rather than a threat detector.'
+    mirror: 'Your primary stress pattern is Somatic-Sensitive. People in this category have a genuinely sophisticated awareness of their body, and that attunement is a real capacity. You tend to notice physical signals early, respond to what your body needs before others would even register something is off, and live with a level of physical self-awareness that many people spend years trying to develop. Your body is not background noise. It is information, and you are unusually good at receiving it. Under stress that same attunement can shift from responsive to vigilant. Rather than listening to the body and responding, the nervous system begins scanning for threat, monitoring for changes, and interpreting physical sensation through an alarm lens. For some people this shows up as acute sensitivity to pain that narrows everything else out. For others it is a quieter pattern, a low-grade background awareness that tracks physical signals closely, sometimes reading ordinary sensations as potential warning signs before there is any real evidence to support that reading. This is an intelligent response to real experience rather than a flaw or an overreaction. The nervous system learned to pay close attention because paying close attention mattered at some point. The difficulty is that over time the vigilance can become the default lens, and when that happens the body stops feeling like an ally and starts feeling like something that needs to be managed. The same attunement that produces vigilance under stress is also what makes you physically self-aware, responsive, and genuinely connected to what your body needs when things are calm. That capacity is worth understanding and protecting. The Zoom-Out work for this pattern is about learning to hear your body as a messenger rather than a threat detector, so the signal gets through without the alarm taking over.'
   },
   appraisal: {
     descriptor: 'How your inner evaluative voice responds when things go wrong, and whether it tends toward understanding or harsh judgment under pressure.',
@@ -271,6 +271,7 @@ function getTier(score) {
   return               { name: 'Active Stress Zone',      key: 'active' };
 }
 
+/* Depletion note */
 /* Depletion note */
 function depletionNote(score) {
   if (score <= 3) {
