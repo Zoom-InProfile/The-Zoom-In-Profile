@@ -379,70 +379,69 @@ const questions = [
     { text: "Never or rarely", score: 3 }
   ]
 },
-// ---------------------------
-  // COMFORT
-  // ---------------------------
-  {
-    id: "comfort_1",
-    category: "comfort",
-    type: "scenario",
-    question: "You experience a major change you didn't see coming. You notice:",
-    answers: [
-      { text: "You find your footing quickly and stay open to the possibilities ahead", score: 0 },
-      { text: "You feel unsettled and disoriented, but you adjust and begin to open up to what's next", score: 1 },
-      { text: "You feel stuck in what you lost, and it's hard to move forward or imagine anything new", score: 2 },
-      { text: "You feel like you lost yourself and can't find who you are in this new version of your life", score: 3 }
-    ]
-  },
-  {
-    id: "comfort_2",
-    category: "comfort",
-    type: "scenario",
-    question: "You decided to make a big change, and it's been harder than you anticipated. You notice:",
-    answers: [
-      { text: "You adjust to the disruption and find your footing without losing confidence in your decision", score: 0 },
-      { text: "You feel unsettled by the challenges, but you trust your decision and stay open", score: 1 },
-      { text: "The challenges pile up and you start to question whether you made the right choice", score: 2 },
-      { text: "You feel like you made a mistake and can't stop measuring everything against how it was before", score: 3 }
-    ]
-  },
-  {
-    id: "comfort_3",
-    category: "comfort",
-    type: "vulnerability",
-    question: "I dread upcoming changes even when I know they might be good for me.",
-    answers: [
-      { text: "Never or rarely", score: 0 },
-      { text: "Sometimes", score: 1 },
-      { text: "Often", score: 2 },
-      { text: "Almost always", score: 3 }
-    ]
-  },
-  {
-    id: "comfort_4",
-    category: "comfort",
-    type: "resilience",
-    question: "When things change, I stay open to what's ahead rather than dwelling on what I lost.",
-    answers: [
-      { text: "Almost always", score: 0 },
-      { text: "Often", score: 1 },
-      { text: "Sometimes", score: 2 },
-      { text: "Never or rarely", score: 3 }
-    ]
-  },
-  {
-    id: "comfort_5",
-    category: "comfort",
-    type: "resilience",
-    question: "I enjoy trying new things even when I'm not good at them yet.",
-    answers: [
-      { text: "Almost always", score: 0 },
-      { text: "Often", score: 1 },
-      { text: "Sometimes", score: 2 },
-      { text: "Never or rarely", score: 3 }
-    ]
-  },
-
+// -------------------------
+// COMFORT
+// -------------------------
+{
+  id: "comfort_1",
+  category: "comfort",
+  type: "scenario",
+  question: "You experience a major change you didn't see coming. You notice:",
+  answers: [
+    { text: "You find your footing quickly and stay open to the possibilities ahead", score: 0 },
+    { text: "You feel unsettled and disoriented, but you adjust and begin to open up to what's next", score: 1 },
+    { text: "You feel stuck in what you lost, and it's hard to move forward or imagine anything new", score: 2 },
+    { text: "You feel like you lost yourself and can't find who you are in this new version of your life", score: 3 }
+  ]
+},
+{
+  id: "comfort_2",
+  category: "comfort",
+  type: "scenario",
+  question: "You decided to make a big change, and you're in the stretch where the old is gone but the new doesn't feel settled yet. You notice:",
+  answers: [
+    { text: "You feel steady in the in-between and trust things will take shape", score: 0 },
+    { text: "You feel unsettled, but stay open as things begin to come together", score: 1 },
+    { text: "You don't feel settled yet and find yourself missing how things were", score: 2 },
+    { text: "You don't feel like yourself right now, and it's hard to find your footing in the change", score: 3 }
+  ]
+},
+{
+  id: "comfort_3",
+  category: "comfort",
+  type: "vulnerability",
+  question: "I often dread the disruption that comes with change even when it's my choice.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "comfort_4",
+  category: "comfort",
+  type: "vulnerability",
+  question: "After a significant change, it takes longer than I'd like to feel like myself again.",
+  answers: [
+    { text: "Never or rarely", score: 0 },
+    { text: "Sometimes", score: 1 },
+    { text: "Often", score: 2 },
+    { text: "Almost always", score: 3 }
+  ]
+},
+{
+  id: "comfort_5",
+  category: "comfort",
+  type: "resilience",
+  question: "When things change, I'm able to let go of what was and settle into what's ahead.",
+  answers: [
+    { text: "Almost always", score: 0 },
+    { text: "Often", score: 1 },
+    { text: "Sometimes", score: 2 },
+    { text: "Never or rarely", score: 3 }
+  ]
+},
   // ---------------------------
   // ATTUNEMENT
   // ---------------------------
