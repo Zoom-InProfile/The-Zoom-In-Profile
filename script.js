@@ -493,8 +493,6 @@ async function submitToAirtable(accuracyRating) {
   const TABLE_NAME = 'Responses';
 
   const fields = {
-    'Age Range': state.ageRange || '',
-    'Gender': state.gender || '',
     'Depletion': state.depletionScore,
     'Somatic': scores.somatic || 0,
     'Appraisal': scores.appraisal || 0,
@@ -510,6 +508,8 @@ async function submitToAirtable(accuracyRating) {
     'Submitted At': new Date().toISOString()
   };
 
+  if (state.ageRange) fields['Age Range'] = state.ageRange;
+  if (state.gender) fields['Gender'] = state.gender;
   try {
     await fetch(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`, {
       method: 'POST',
