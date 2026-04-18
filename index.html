@@ -106,7 +106,37 @@
       <button id="next-btn" class="btn-primary" disabled>Next</button>
     </div>
   </div>
+</div>
 
+  <div id="demo-page" class="demo-page hidden">
+    <div class="demo-card">
+      <h2 class="demo-title">Before You Begin</h2>
+      <p class="demo-intro">Two quick questions to help us improve the assessment.</p>
+      <div class="demo-fields">
+        <select id="demo-age">
+          <option value="">Age range</option>
+          <option value="Under 25">Under 25</option>
+          <option value="25-34">25-34</option>
+          <option value="35-44">35-44</option>
+          <option value="45-54">45-54</option>
+          <option value="55-64">55-64</option>
+          <option value="65-74">65-74</option>
+          <option value="75 and over">75 and over</option>
+        </select>
+        <select id="demo-gender">
+          <option value="">Gender</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+          <option value="Other">Other</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+      </div>
+      <button class="btn-primary" id="demo-btn">Begin the Profile</button>
+      <p class="demo-skip"><a href="#" id="demo-skip-link">Skip</a></p>
+    </div>
+  </div>
+
+  <div id="results-page" class="results-page hidden">
   <div id="results-page" class="results-page hidden">
 
     <div class="results-header">
@@ -140,6 +170,11 @@
     </div>
 
     <div class="results-mirror" id="mirror-paragraph"></div>
+
+<div class="results-accuracy" id="accuracy-block">
+  <p class="accuracy-question">How accurately does this profile describe you?</p>
+  <div class="accuracy-scale" id="accuracy-scale"></div>
+</div>
 <div class="results-block" id="glossary-block">
  <h3 class="results-block-heading results-block-heading--caps">Understanding the Nine Stress Type Categories</h3>
   <div id="glossary-content"></div>
@@ -218,36 +253,6 @@
       <p>It is common for some of these patterns to feel familiar or even uncomfortable to see clearly. That does not mean something is wrong &mdash; it means something meaningful is coming into view. If what comes up feels difficult to manage on your own, consider reaching out to a licensed therapist or someone you trust.</p>
       <p>This tool is not monitored and responses are not reviewed unless you choose to share them. It does not provide real-time support.</p>
       <p>If you are in immediate distress or feel at risk of harming yourself or others, please call 911, go to your nearest emergency room, or contact the Suicide &amp; Crisis Lifeline by dialing <strong>988</strong>.</p>
-    </div>
-
-    <div class="results-data-form" id="data-form">
-      <h3 class="results-block-heading results-block-heading--caps">Save Your Results</h3>
-     <p class="data-form-intro">Your name and email are collected so we can send you your results. Your scores are used anonymously for research purposes to improve the assessment. Your personal information will not be shared with third parties.</p>
-      <div class="form-fields">
-        <input type="text" id="form-name" placeholder="First name" />
-        <input type="email" id="form-email" placeholder="Email address" />
-        <select id="form-age">
-          <option value="">Age range</option>
-          <option value="Under 25">Under 25</option>
-          <option value="25-34">25-34</option>
-          <option value="35-44">35-44</option>
-          <option value="45-54">45-54</option>
-          <option value="55-64">55-64</option>
-          <option value="65-74">65-74</option>
-          <option value="75 and over">75 and over</option>
-        </select>
-        <select id="form-gender">
-          <option value="">Gender</option>
-          <option value="Female">Female</option>
-          <option value="Male">Male</option>
-          <option value="Other">Other</option>
-          <option value="Prefer not to say">Prefer not to say</option>
-        </select>
-        <p class="accuracy-question">How accurately does this profile describe you?</p>
-        <div class="accuracy-scale" id="accuracy-scale"></div>
-      </div>
-      <button class="btn-primary" id="submit-data-btn">Submit</button>
-      <p class="form-note" id="form-status"></p>
     </div>
     <div class="results-retake">
       <button class="btn-secondary" id="retake-btn">Retake the Profile</button>
