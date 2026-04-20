@@ -246,7 +246,7 @@ const questions = [
   id: "connection_5",
   category: "connection",
   type: "resilience",
-  question: "When a relationship feels tense or difficult, I don't think to question how loved I am.",
+  question: "I don't think to question how loved I am, when my relationships are tense or difficult.",
   answers: [
     { text: "Almost always", score: 0 },
     { text: "Often", score: 1 },
