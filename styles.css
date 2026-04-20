@@ -281,7 +281,6 @@ body {
 /* --- Depletion Scale -------------------------------------- */
 .depletion-section {
   padding: 48px 0 36px;
-  border-top: 1px solid var(--gray-200);
 }
 
 .depletion-prompt {
@@ -1840,9 +1839,7 @@ body {
   font-size: 1rem;
   color: var(--gray-600);
   line-height: 1.75;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--gray-200);
+  margin-top: 12px;
 }
 
 .outcomes-section {
