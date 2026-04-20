@@ -1966,3 +1966,20 @@ body {
   border-top: 1px solid rgba(255,255,255,0.12);
   font-family: var(--font-body);
 }
+.results-accuracy {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  background: var(--gray-100);
+  border-radius: var(--radius);
+  text-align: center;
+  border: 2px solid var(--gray-200);
+}
+
+.accuracy-question {
+  font-size: 1.05rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+}
