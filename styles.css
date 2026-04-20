@@ -105,7 +105,6 @@ body {
 .hero {
   text-align: center;
   padding: 44px 0 36px;
-  border-bottom: 1px solid var(--gray-200);
 }
 
 
@@ -226,7 +225,6 @@ body {
 /* --- Instructions / Steps Grid --------------------------- */
 .instructions-section {
   padding: 48px 0 36px;
-  border-top: 1px solid var(--gray-200);
 }
 
 .steps-grid {
