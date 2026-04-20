@@ -169,9 +169,55 @@
     <button class="btn-primary" id="agency-btn">I&rsquo;m Ready</button>
   </div>
 </div>
+<div id="results-page" class="results-page hidden">
 
-         <p class="cta-body">Your results show where you tend to zoom in under stress, and where you already hold steady. What matters next is understanding what that actually looks like in your day-to-day life, and how to begin working with it.</p>
+    <div class="results-header">
+      <p class="results-eyebrow">The Zoom-In Profile</p>
+      <h2 class="results-title" id="results-title">Your Results</h2>
+      <p class="results-date">Based on your responses today.</p>
+    </div>
 
+    <div class="depletion-context" id="depletion-context"></div>
+
+    <div class="results-block" id="primary-block">
+      <h3 class="results-block-heading results-block-heading--caps">Primary Stress Type</h3>
+      <div id="primary-content"></div>
+    </div>
+
+    <div class="results-block" id="resilience-block">
+      <h3 class="results-block-heading results-block-heading--caps">Resilience Areas</h3>
+      <div id="resilience-content"></div>
+    </div>
+
+    <div class="results-block">
+      <h3 class="results-block-heading results-block-heading--caps">Your Full Profile</h3>
+      <p class="results-block-sub">All nine areas, scored from today's responses.</p>
+      <div class="tier-legend">
+        <span class="legend-item"><span class="legend-dot tier-resilient"></span>Resilient Area (0&ndash;5)</span>
+        <span class="legend-item"><span class="legend-dot tier-mild"></span>Mild Sensitivity (6&ndash;8)</span>
+        <span class="legend-item"><span class="legend-dot tier-moderate"></span>Moderate Sensitivity (9&ndash;10)</span>
+        <span class="legend-item"><span class="legend-dot tier-active"></span>Active Stress Zone (11&ndash;15)</span>
+      </div>
+      <div class="bar-graph" id="bar-graph"></div>
+    </div>
+
+    <div class="results-mirror" id="mirror-paragraph"></div>
+
+    <div class="results-accuracy" id="accuracy-block">
+      <p class="accuracy-question">How accurately do these results reflect how you experience stress right now?</p>
+      <div class="accuracy-labels">
+        <span>1 — Not at all accurate</span>
+        <span>5 — Very accurate</span>
+      </div>
+      <div class="accuracy-scale" id="accuracy-scale"></div>
+    </div>
+
+    <div class="results-cta">
+      <div class="cta-card">
+        <p class="cta-eyebrow">Next Step</p>
+        <p class="cta-section-title">Personalized Interpretation</p>
+        <h3 class="cta-title">Most people feel these patterns for years without ever being able to name them. Your interpretation does that &mdash; and shows you where to start.</h3>
+        <p class="cta-body">Your results show where you tend to zoom in under stress, and where you already hold steady. What matters next is understanding what that actually looks like in your day-to-day life, and how to begin working with it.</p>
         <div class="cta-includes">
           <p class="cta-includes-heading">Your personalized written interpretation will walk you through:</p>
           <ul class="cta-list">
@@ -183,7 +229,6 @@
           </ul>
           <p class="cta-body">You'll also receive a personalized plan using the Happier Hour rituals, so you know exactly how to begin working with your patterns instead of getting pulled by them.</p>
         </div>
-
         <div class="cta-steps">
           <p class="cta-includes-heading">A simple next step:</p>
           <ol class="cta-ordered">
@@ -193,13 +238,11 @@
             <li>Receive your personalized interpretation within 48 hours</li>
           </ol>
         </div>
-
         <div class="cta-pricing">
           <span class="cta-price-original">$125</span>
           <span class="cta-price-current">$75</span>
           <span class="cta-price-note">Introductory rate while the Profile is in early release</span>
         </div>
-
         <button class="btn-cta" id="stripe-btn">Get My Personalized Interpretation</button>
         <div class="cta-couple">
           <p class="cta-couple-heading">Taking the Profile with a partner?</p>
@@ -207,12 +250,30 @@
           <button class="btn-cta-secondary" id="couple-btn">Add Couples Interpretation &mdash; $50</button>
         </div>
         <p class="cta-fine">This is a one-time written interpretation designed for insight and direction. It is not therapy and does not include ongoing support. It does not establish a therapist&ndash;client relationship.</p>
-
         <div class="cta-work-with-me">
           <p>Ready to go deeper? I work with people one-on-one. <a href="https://www.happierhour.com" target="_blank">Learn more at happierhour.com</a></p>
         </div>
-
       </div>
+    </div>
+
+    <div class="testimonial-grid">
+      <blockquote class="testimonial-card">
+        <p class="testimonial-text">&ldquo;The results were helpful, but the interpretation is where it really clicked. I could see exactly how my pattern plays out and what to do differently.&rdquo;</p>
+        <p class="testimonial-attr">&mdash; Happier Hour participant</p>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p class="testimonial-text">&ldquo;I thought I understood my stress response until I read the interpretation. It connected things I hadn't put together before and gave me a clear way to work with it.&rdquo;</p>
+        <p class="testimonial-attr">&mdash; Happier Hour participant</p>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p class="testimonial-text">&ldquo;This didn't just describe me, it helped me change how I respond. The personalized breakdown made it practical in a way the results alone weren't.&rdquo;</p>
+        <p class="testimonial-attr">&mdash; Happier Hour participant</p>
+      </blockquote>
+    </div>
+
+    <div class="results-block" id="glossary-block">
+      <h3 class="results-block-heading results-block-heading--caps">Understanding the Nine Stress Type Categories</h3>
+      <div id="glossary-content"></div>
     </div>
 
     <div class="results-disclaimer">
@@ -221,17 +282,19 @@
       <p>This tool is not monitored and responses are not reviewed unless you choose to share them. It does not provide real-time support.</p>
       <p>If you are in immediate distress or feel at risk of harming yourself or others, please call 911, go to your nearest emergency room, or contact the Suicide &amp; Crisis Lifeline by dialing <strong>988</strong>.</p>
     </div>
+
     <div class="results-retake">
       <button class="btn-secondary" id="retake-btn">Retake the Profile</button>
     </div>
 
   </div>
-<div class="results-copyright">
-      <p>© 2026 Robin Engelman, PhD / Happier Hour®. The Zoom-In Profile™ and The 9 Stress-Types™ are trademarks of Happier Hour®.</p>
-    </div>
-<script src="content.js?v=8"></script>
-<script src="script.js?v=15"></script>
-    "></script>
+
+  <div class="results-copyright">
+    <p>© 2026 Robin Engelman, PhD / Happier Hour®. The Zoom-In Profile™ and The 9 Stress-Types™ are trademarks of Happier Hour®.</p>
+  </div>
+
+  <script src="content.js?v=8"></script>
+  <script src="script.js?v=16"></script>
 
 </body>
 </html>
