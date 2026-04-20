@@ -459,24 +459,10 @@ function showResults() {
   }
   buildGlossary();
   initAccuracyScale();
+  submitInitialToAirtable(); 
 }
 /* Data Collection */
-function initAccuracyScale() {
-  const scaleEl = document.getElementById('accuracy-scale');
-  if (!scaleEl) return;
-  scaleEl.innerHTML = '';
-  for (let i = 1; i <= 5; i++) {
-    const btn = document.createElement('button');
-    btn.className = 'accuracy-btn';
-    btn.textContent = i;
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.accuracy-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      submitToAirtable(i);
-    });
-    scaleEl.appendChild(btn);
-  }
-}
+let airtableRecordId = null;
 
 function getPrimaryType(scores) {
   const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
@@ -484,7 +470,7 @@ function getPrimaryType(scores) {
   return categoryMeta[topKey] ? categoryMeta[topKey].fullLabel : topKey;
 }
 
-async function submitToAirtable(accuracyRating) {
+async function submitInitialToAirtable() {
   const scores = calculateScores();
   const primary = getPrimaryType(scores);
 
@@ -504,14 +490,14 @@ async function submitToAirtable(accuracyRating) {
     'Attunement': scores.attunement || 0,
     'Certainty': scores.certainty || 0,
     'Primary Type': primary,
-    'Accuracy Rating': accuracyRating,
     'Submitted At': new Date().toISOString()
   };
 
   if (state.ageRange) fields['Age Range'] = state.ageRange;
   if (state.gender) fields['Gender'] = state.gender;
+
   try {
-    await fetch(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`, {
+    const response = await fetch(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
@@ -519,8 +505,50 @@ async function submitToAirtable(accuracyRating) {
       },
       body: JSON.stringify({ fields })
     });
+    const data = await response.json();
+    if (data && data.id) {
+      airtableRecordId = data.id;
+    }
   } catch (err) {
     console.error('Airtable submission failed:', err);
+  }
+}
+
+async function updateAccuracyRating(rating) {
+  if (!airtableRecordId) return;
+
+  const AIRTABLE_TOKEN = 'patx16V5sirHe944I.cc59aa32fc93d895acbd1dd3a60a712b3b0ca194750e28ac9469e4a628316ce4';
+  const BASE_ID = 'appoiZOho3OE12Hlk';
+  const TABLE_NAME = 'Responses';
+
+  try {
+    await fetch(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}/${airtableRecordId}`, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ fields: { 'Accuracy Rating': rating } })
+    });
+  } catch (err) {
+    console.error('Airtable accuracy update failed:', err);
+  }
+}
+
+function initAccuracyScale() {
+  const scaleEl = document.getElementById('accuracy-scale');
+  if (!scaleEl) return;
+  scaleEl.innerHTML = '';
+  for (let i = 1; i <= 5; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'accuracy-btn';
+    btn.textContent = i;
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.accuracy-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      updateAccuracyRating(i);
+    });
+    scaleEl.appendChild(btn);
   }
 }
 /* ============================================================
