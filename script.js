@@ -552,19 +552,32 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('demo-page').classList.remove('hidden');
   });
 
-  document.getElementById('demo-btn').addEventListener('click', function () {
+ document.getElementById('demo-btn').addEventListener('click', function () {
     state.ageRange = document.getElementById('demo-age').value;
     state.gender = document.getElementById('demo-gender').value;
     document.getElementById('demo-page').classList.add('hidden');
-    quizPage.classList.remove('hidden');
-    initQuiz();
+    document.getElementById('settle-page').classList.remove('hidden');
+    window.scrollTo(0, 0);
   });
 
   document.getElementById('demo-skip-link').addEventListener('click', function (e) {
     e.preventDefault();
     document.getElementById('demo-page').classList.add('hidden');
+    document.getElementById('settle-page').classList.remove('hidden');
+    window.scrollTo(0, 0);
+  });
+
+  document.getElementById('settle-btn').addEventListener('click', function () {
+    document.getElementById('settle-page').classList.add('hidden');
+    document.getElementById('agency-page').classList.remove('hidden');
+    window.scrollTo(0, 0);
+  });
+
+  document.getElementById('agency-btn').addEventListener('click', function () {
+    document.getElementById('agency-page').classList.add('hidden');
     quizPage.classList.remove('hidden');
     initQuiz();
+    window.scrollTo(0, 0);
   });
 
   const retakeBtn = document.getElementById('retake-btn');
