@@ -443,17 +443,25 @@ function showResults() {
   const validationText = meta && meta.validationLine ? meta.validationLine : '';
   mirrorEl.textContent = mirrorText + (validationText ? ' ' + validationText : '');
 } else {
-      /* Tied primaries: separate paragraph per category, then shared closing */
-      const names = primaries.map(function (p) { return p.fullLabel; }).join(' and ');
-      let parts = ['Your highest scores are tied across ' + names + '.'];
+      /* Tied primaries: handles two, three, or more */
+      const count = primaries.length;
+      const nameList = primaries.map(function (p) { return p.fullLabel; });
+      const namesFormatted = count === 2
+        ? nameList.join(' and ')
+        : nameList.slice(0, -1).join(', ') + ', and ' + nameList[nameList.length - 1];
+
+      let parts = ['Your highest scores are tied across ' + namesFormatted + '.'];
+
       primaries.forEach(function (p) {
         const m = categoryMeta[p.category];
         if (m && m.tiedBody && m.validationLine) {
           parts.push(m.tiedBody + ' ' + m.validationLine);
         }
       });
-      parts.push('The Zoom-Out work for both patterns is about learning to recognize when each one is narrowing your perspective, and finding your way back to a clearer and steadier view of what\'s actually happening.');
-      parts.push('These patterns do not operate in isolation. When both are active, they tend to shape and amplify each other in ways that can feel hard to untangle — and that is exactly what your interpretation is designed to help you see. Your interpretation will show you how these patterns operate across different categories in your life and how to use them to your advantage.');
+
+      parts.push('The Zoom-Out work for ' + (count === 2 ? 'both' : 'all ' + count) + ' patterns is about learning to recognize when each one is narrowing your perspective, and finding your way back to a clearer and steadier view of what\'s actually happening.');
+      parts.push('These patterns do not operate in isolation. When more than one is active, they shape and amplify each other in ways that can feel hard to untangle. Your personalized interpretation is designed to show you exactly how your specific combination works together and where to focus first.');
+
       mirrorEl.textContent = parts.join(' ');
     }
   }
