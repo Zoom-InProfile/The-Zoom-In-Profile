@@ -277,11 +277,11 @@ function getTier(score) {
 function depletionNote(score) {
   const contextLine = 'Your results reflect where your nervous system is right now. This pattern may represent a long-standing stress signature or a response to what\'s happening in your life at this particular moment.';
   if (score <= 3) {
-    return 'Your depletion level today is low (' + score + '/10). Your scores are likely a reliable reflection of your baseline stress patterns. ' + contextLine;
+    return 'Your stress level today is low (' + score + '/10). Your scores are likely a reliable reflection of your baseline stress patterns. ' + contextLine;
   } else if (score <= 6) {
-    return 'Your depletion level today is moderate (' + score + '/10). Some scores may be slightly elevated compared to a more rested baseline, and that is worth keeping in mind as you read your results. ' + contextLine;
+    return 'Your stress level today is moderate (' + score + '/10). Some scores may be slightly elevated compared to a more rested baseline, and that is worth keeping in mind as you read your results. ' + contextLine;
   } else {
-    return 'Your depletion level today is high (' + score + '/10). When your system is running low on resources, stress patterns tend to feel more intense. Your scores today may reflect that added strain rather than your baseline pattern alone. ' + contextLine;
+    return 'Your stress level today is high (' + score + '/10). When your system is running low on resources, stress patterns tend to feel more intense. Your scores today may reflect that added strain rather than your baseline pattern alone. ' + contextLine;
   }
 }
 /* Calculate scores */
@@ -657,4 +657,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
 
