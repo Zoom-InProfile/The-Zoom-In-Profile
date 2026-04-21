@@ -1821,23 +1821,15 @@ body {
 .insight-text {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  color: var(--gray-800);
+  color: var(--gray-600);
   line-height: 1.75;
   margin-bottom: 18px;
 }
-
-.insight-anchor {
-  font-family: var(--font-body);
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--black);
-  margin-top: 8px;
-}
-
 .insight-bridge {
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--gray-600);
+  color: var(--gray-800);
+  font-weight: 500;
   line-height: 1.75;
   margin-top: 12px;
 }
