@@ -1983,3 +1983,6 @@ body {
   font-weight: 600;
   font-family: var(--font-body);
 }
+#glossary-block {
+  margin-top: 48px;
+}
