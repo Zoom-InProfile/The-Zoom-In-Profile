@@ -463,6 +463,33 @@ function showResults() {
       mirrorEl.textContent = parts.join(' ');
     }
   }
+   /* Multi-score acknowledgment */
+  const multiEl = document.getElementById('multi-score-block');
+  if (multiEl) {
+    const primaryCategories = primaries.map(function (p) { return p.category; });
+    const activating = sorted.filter(function (item) {
+      return item.score >= 8 && !primaryCategories.includes(item.category);
+    });
+
+    if (activating.length > 0) {
+      const names = activating.map(function (item) {
+        return categoryMeta[item.category] ? categoryMeta[item.category].label : item.label;
+      });
+
+      const nameList = names.length === 1
+        ? names[0]
+        : names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
+
+      multiEl.innerHTML =
+        '<p class="multi-score-text">Your results also show meaningful activation in ' + nameList + '. ' +
+        'These patterns are present in your stress response and likely shape how your primary type expresses itself — ' +
+        'what triggers it, what intensifies it, and how it tends to play out in daily life. ' +
+        'How these specific patterns interact with your primary type, and what to do about that combination, ' +
+        'is what the personalized interpretation explores.</p>';
+    } else {
+      multiEl.innerHTML = '';
+    }
+  }
   buildGlossary();
   initAccuracyScale();
   submitInitialToAirtable(); 
@@ -632,6 +659,8 @@ document.addEventListener('DOMContentLoaded', function () {
       depEl.classList.remove('high-depletion');
       document.getElementById('results-title').textContent = 'Your Results';
       document.getElementById('mirror-paragraph').textContent = '';
+      const multiEl = document.getElementById('multi-score-block');
+      if (multiEl) multiEl.innerHTML = '';
       startBtn.disabled = true;
       startNote.style.display = '';
       document.getElementById('results-page').classList.add('hidden');
