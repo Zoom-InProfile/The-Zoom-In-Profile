@@ -513,7 +513,8 @@ function showResults() {
         '<p class="multi-score-text">Your results also show activation in ' + nameList + '. ' +
         'These patterns are present alongside your primary ' + typeWord + ' and tend to shape ' + verbPhrase + ' — ' +
         'what situations pull you off center, how quickly the stress response builds, and how it feels from the inside. ' +
-        'What\'
+        'What\'s harder to see is how your specific combination works together, where these patterns amplify each other, ' +
+        'and what to actually do about it. That\'s exactly what the personalized interpretation report is designed to show you.</p>';
     } else {
       multiEl.innerHTML = '';
     }
