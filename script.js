@@ -265,10 +265,10 @@ const categoryMeta = {
 };
 /* Tier */
 function getTier(score) {
-  if (score <= 5)  return { name: 'Resilient Area',       key: 'resilient' };
-  if (score <= 8)  return { name: 'Mild Sensitivity',     key: 'mild' };
-  if (score <= 10) return { name: 'Moderate Sensitivity', key: 'moderate' };
-  return               { name: 'Active Stress Zone',      key: 'active' };
+  if (score <= 5)  return { name: 'Resilient Range',        key: 'resilient' };
+  if (score <= 8)  return { name: 'Activated Sensitivity',  key: 'mild' };
+  if (score <= 10) return { name: 'Heightened Sensitivity', key: 'moderate' };
+  return               { name: 'Active Stress Zone',        key: 'active' };
 }
 
 /* Depletion note */
@@ -371,20 +371,46 @@ function showResults() {
   primaryContent.appendChild(tagContainer);
   primaryContent.appendChild(scoreNote);
 
-  /* Resilience block */
+/* Resilience block */
   const resContent = document.getElementById('resilience-content');
+  const resBlock = document.getElementById('resilience-block');
+  const resHeading = resBlock.querySelector('h3');
   resContent.innerHTML = '';
-  const resContainer = document.createElement('div');
-  resContainer.classList.add('resilience-tags');
-  resilience.forEach(function (r) {
-    const tag = document.createElement('span');
-    tag.classList.add('resilience-tag');
-    const meta = categoryMeta[r.category];
-    tag.textContent = meta ? meta.label : r.label;
-    resContainer.appendChild(tag);
-  });
-  resContent.appendChild(resContainer);
 
+  const genuinelyResilient = byScoreAsc.filter(function (r) { return r.score <= 5; });
+  const allAboveEight = byScoreAsc[0].score >= 8;
+
+  if (genuinelyResilient.length > 0) {
+    resHeading.textContent = 'Resilience Areas';
+    const resContainer = document.createElement('div');
+    resContainer.classList.add('resilience-tags');
+    genuinelyResilient.forEach(function (r) {
+      const tag = document.createElement('span');
+      tag.classList.add('resilience-tag');
+      const meta = categoryMeta[r.category];
+      tag.textContent = meta ? meta.label : r.label;
+      resContainer.appendChild(tag);
+    });
+    resContent.appendChild(resContainer);
+  } else if (allAboveEight) {
+    resHeading.textContent = 'A Note on Your Profile';
+    const note = document.createElement('p');
+    note.classList.add('multi-score-text');
+    note.textContent = 'Your profile shows activation across all nine areas — there are no patterns sitting fully quiet right now. This is worth taking seriously. It suggests your nervous system is carrying a broad load rather than narrowing around one or two specific stress types, and that kind of widespread activation tends to accumulate in ways that aren\'t always visible from the inside. The personalized interpretation is particularly valuable for profiles like yours, where understanding which patterns to address first can make a meaningful difference.';
+    resContent.appendChild(note);
+  } else {
+    resHeading.textContent = 'Less Activated Areas';
+    const resContainer = document.createElement('div');
+    resContainer.classList.add('resilience-tags');
+    byScoreAsc.slice(0, 3).filter(function (r) { return r.score <= 7; }).forEach(function (r) {
+      const tag = document.createElement('span');
+      tag.classList.add('resilience-tag');
+      const meta = categoryMeta[r.category];
+      tag.textContent = meta ? meta.label : r.label;
+      resContainer.appendChild(tag);
+    });
+    resContent.appendChild(resContainer);
+  }
   /* Bar graph */
   const graph = document.getElementById('bar-graph');
   graph.innerHTML = '';
