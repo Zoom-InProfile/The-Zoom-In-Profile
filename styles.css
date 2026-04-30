@@ -1978,3 +1978,7 @@ body {
 #glossary-block {
   margin-top: 48px;
 }
+.tier-tag-resilient { border-color: /* your green */; color: /* your green */; }
+.tier-tag-mild      { border-color: /* your gold */; color: /* your gold */; }
+.tier-tag-moderate  { border-color: /* your moderate color */; color: /* your moderate color */; }
+.tier-tag-active    { border-color: /* your active color */; color: /* your active color */; }
