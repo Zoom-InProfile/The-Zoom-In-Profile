@@ -399,12 +399,12 @@ function showResults() {
     note.textContent = 'Your profile shows activation across all nine areas — there are no patterns sitting fully quiet right now. This is worth taking seriously. It suggests your nervous system is carrying a broad load rather than narrowing around one or two specific stress types, and that kind of widespread activation tends to accumulate in ways that aren\'t always visible from the inside. The personalized interpretation is particularly valuable for profiles like yours, where understanding which patterns to address first can make a meaningful difference.';
     resContent.appendChild(note);
   } else {
-    resHeading.textContent = 'Less Activated Areas';
+    resHeading.textContent = 'Areas of Steadiness';
     const resContainer = document.createElement('div');
     resContainer.classList.add('resilience-tags');
-    byScoreAsc.slice(0, 3).filter(function (r) { return r.score <= 7; }).forEach(function (r) {
+    byScoreAsc.slice(0, 3).forEach(function (r) {
       const tag = document.createElement('span');
-      tag.classList.add('resilience-tag');
+      tag.classList.add('resilience-tag', 'tier-tag-' + r.tier.key);
       const meta = categoryMeta[r.category];
       tag.textContent = meta ? meta.label : r.label;
       resContainer.appendChild(tag);
