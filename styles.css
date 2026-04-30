@@ -1978,7 +1978,7 @@ body {
 #glossary-block {
   margin-top: 48px;
 }
-.tier-tag-resilient { border-color: /* your green */; color: /* your green */; }
-.tier-tag-mild      { border-color: /* your gold */; color: /* your gold */; }
-.tier-tag-moderate  { border-color: /* your moderate color */; color: /* your moderate color */; }
-.tier-tag-active    { border-color: /* your active color */; color: /* your active color */; }
+.tier-tag-resilient { border-color: #7a9e7e; color: #4a7050; background: #f2f7f3; }
+.tier-tag-mild      { border-color: #c9a84c; color: #8a6d1f; background: #faf6e9; }
+.tier-tag-moderate  { border-color: #c4856a; color: #8a4f35; background: #fdf2ee; }
+.tier-tag-active    { border-color: #b8768a; color: #8a4f60; background: #fdf5f7; }
