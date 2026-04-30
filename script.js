@@ -506,12 +506,14 @@ function showResults() {
         ? names[0]
         : names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
 
+     const typeWord = primaries.length === 1 ? 'type' : 'types';
+      const verbPhrase = primaries.length === 1 ? 'how it shows up' : 'how they show up';
+
       multiEl.innerHTML =
-        '<p class="multi-score-text">Your results also show meaningful activation in ' + nameList + '. ' +
-        'These patterns are present in your stress response and likely shape how your primary type expresses itself — ' +
-        'what triggers it, what intensifies it, and how it tends to play out in daily life. ' +
-        'How these specific patterns interact with your primary type, and what to do about that combination, ' +
-        'is what the personalized interpretation explores.</p>';
+        '<p class="multi-score-text">Your results also show activation in ' + nameList + '. ' +
+        'These patterns are present alongside your primary ' + typeWord + ' and tend to shape ' + verbPhrase + ' — ' +
+        'what situations pull you off center, how quickly the stress response builds, and how it feels from the inside. ' +
+        'What\'
     } else {
       multiEl.innerHTML = '';
     }
