@@ -384,7 +384,7 @@ function showResults() {
     resHeading.textContent = 'Resilience Areas';
     const resContainer = document.createElement('div');
     resContainer.classList.add('resilience-tags');
-    genuinelyResilient.forEach(function (r) {
+   genuinelyResilient.slice(0, 3).forEach(function (r) {
       const tag = document.createElement('span');
       tag.classList.add('resilience-tag');
       const meta = categoryMeta[r.category];
@@ -525,6 +525,7 @@ function showResults() {
 }
 /* Data Collection */
 let airtableRecordId = null;
+let airtableSubmitted = false;
 
 function getPrimaryType(scores) {
   const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
@@ -533,6 +534,8 @@ function getPrimaryType(scores) {
 }
 
 async function submitInitialToAirtable() {
+  if (airtableSubmitted) return;
+  airtableSubmitted = true;
   const scores = calculateScores();
   const primary = getPrimaryType(scores);
 
@@ -688,6 +691,7 @@ document.addEventListener('DOMContentLoaded', function () {
       depEl.classList.remove('high-depletion');
       document.getElementById('results-title').textContent = 'Your Results';
       document.getElementById('mirror-paragraph').textContent = '';
+      airtableSubmitted = false; 
       const multiEl = document.getElementById('multi-score-block');
       if (multiEl) multiEl.innerHTML = '';
       startBtn.disabled = true;
